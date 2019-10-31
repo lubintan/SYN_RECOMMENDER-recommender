@@ -1,10 +1,10 @@
 import pandas as pd
 import plotly.graph_objs as go
 import plotly
-from surprise import Reader, Dataset, KNNBaseline, KNNBasic, KNNWithMeans, KNNWithZScore, SlopeOne
-    # SVD,SVDpp,SlopeOne, NMF, NormalPredictor, BaselineOnly, CoClustering
+from surprise import Reader, Dataset, KNNBaseline, KNNBasic, KNNWithMeans, KNNWithZScore, SlopeOne,SVD,SVDpp, \
+    NMF, NormalPredictor, BaselineOnly, CoClustering
 import surprise.model_selection as models
-import random
+import random, time
 import numpy as np
 
 
@@ -25,6 +25,8 @@ ALGO_LIST = [
             {"name": 'KNN_Means', "algo": KNNWithMeans()},
             {"name": 'KNN_ZScore', "algo": KNNWithZScore()},
             {"name": 'SlopeOne', "algo": SlopeOne()},
+            {"name": 'SVD', "algo": SVD()},
+            {"name": 'BaselineOnly', "algo": BaselineOnly()},
             ]
 
 PREDICTION_LIST = [KNNBaseline(), KNNBasic(), KNNWithMeans(),KNNWithZScore(), SlopeOne()]
@@ -35,9 +37,25 @@ ACCURACY_LIST = ['RMSE', 'MAE']
 
 # For Actual Use
 
-def processData(inputFile = 'tables_72/59_F_40s_Married_4000 - 9999'):
+def processData(inputFile = 'tables_72_DE/46_Female_30s_Single_<50k', folds = 5):
+
+
     print('Reading data..')
     df = pd.read_csv(inputFile)
+
+    df2 = pd.read_csv('tables_72/46_F_30s_Single_Below 4000')
+
+    print(len(df))
+    print(len(df2))
+
+    df = pd.concat([df,df2], sort=False)
+
+
+    # print(len(df))
+    #
+    # print(df)
+
+    # df = pd.read_excel(inputFile)
 
     gender = df.iloc[0]['GENDER']
     age_group = df.iloc[0]['AGE GROUP']
@@ -45,6 +63,10 @@ def processData(inputFile = 'tables_72/59_F_40s_Married_4000 - 9999'):
     incomeLvl = df.iloc[0]['INCOME GROUP']
 
     df.drop(labels=['GENDER', 'AGE GROUP', 'LIFESTAGE', 'INCOME GROUP','AGE'], inplace=True, axis=1)
+    # df.drop(labels=['GENDER', 'AGE GROUP', 'LIFESTAGE', 'INCOME GROUP'], inplace=True, axis=1)
+
+    df.to_csv("outputCombined.csv")
+
 
     products = df.columns[1:] # remove 'CLIENTS'
 
@@ -60,14 +82,100 @@ def processData(inputFile = 'tables_72/59_F_40s_Married_4000 - 9999'):
 
     processedDf = pd.DataFrame(newList, columns=['CLIENTS', 'ITEM', 'RATING'])
 
-    reader = Reader(rating_scale=RATING_SCALE)
-    data = Dataset.load_from_df(processedDf, reader)
+    # drop 0s
+    processedDf = processedDf.dropna()
+
+    processedDf = processedDf[processedDf['RATING']!=0].reset_index(drop=True)
+
+    print(processedDf)
+
+    # exit()
+
+    length = len(processedDf)
+
+    if length < folds:
+        print("Data too small for folding %i times" % (folds))
+        return 0, 0
+
+    else:
+
+        chunkSize = int(length / folds)
+
+        trainDfList = []
+        testDfList = []
+
+        for i in range(folds):
+            head = i*chunkSize
+            tail = (i+1)*chunkSize
+
+            testDf = processedDf[head:tail]
+            trainDf = pd.concat([processedDf[0:head], processedDf[tail:]])
+
+            testDfList.append(testDf)
+            trainDfList.append(trainDf)
+
+
+    # reader = Reader(rating_scale=RATING_SCALE)
+    # data = Dataset.load_from_df(processedDf, reader)
 
     print('Data read complete.')
     print()
     print('Gender:',gender, '\nAge Group:',age_group, "\nLifestage:",lifestage, '\nIncome:', incomeLvl, '\n')
 
-    return data, df
+    return testDfList, trainDfList
+
+def measureAccuracy(testSet, trainSet, algo=None, sim=SIM_LIST[0]):
+    MIN_ENTRIES = 2
+
+    userCount = testSet.groupby('CLIENTS').count()
+    userCount = userCount.sort_values(['RATING'], ascending=[0])
+    userCount = userCount[userCount['RATING'] >= MIN_ENTRIES]
+
+    userIDs = list(userCount.index)
+
+    itemCount = testSet.groupby('ITEM').count()
+    items = list(itemCount.index)
+
+    newTest = []
+
+    # for i,r in testSet.iterrows():
+    #     if r.CLIENTS in userIDs:
+    #         newTest.append([r.CLIENTS, r.ITEM, r.RATING])
+    #
+    # filteredTest = pd.DataFrame(newTest, columns=['CLIENTS', 'ITEM', 'RATING'])
+
+    reader = Reader(rating_scale=RATING_SCALE)
+    algo.sim_options = sim
+
+    squaredErrorList = []
+
+    for client in userIDs:
+        thisDf = testSet[testSet['CLIENTS'] == client].reset_index(drop=True)
+
+        num = len(thisDf)
+
+        for i in range(num):
+            actualRating = thisDf.iloc[i].RATING
+            thisItem = thisDf.iloc[i].ITEM
+
+            newDf = thisDf.drop(thisDf.index[i])
+            trainSet = pd.concat([trainSet, newDf])
+
+            data = Dataset.load_from_df(trainSet, reader)
+            trainingData = data.build_full_trainset()
+            algo.fit(trainingData)
+
+            # for eachItem in items:
+            prediction = algo.predict(client, thisItem)
+
+            squaredErr = (prediction.est - actualRating)**2
+
+            squaredErrorList.append(squaredErr)
+
+    return np.sqrt(np.mean(squaredErrorList))
+
+
+
 
 def getTopN(data, df, userID, N = 1, algo = ALGO_LIST[0], sim = SIM_LIST[0]):
     print('Getting Top %i Recommendations.'%(N))
@@ -139,18 +247,55 @@ def compareAlgos(data):
 
 if __name__ == "__main__":
 
+    start = time.time()
+
 # The following steps gets the Top N recommendations for a particular user.
 # Requires the user to have made at least 1 rating.
 
-    data, df = processData()
+    testDfList, trainDfList = processData( folds=4)
 
-    users = df.CLIENTS.unique()
+    n = len(testDfList)
+    overallAccuracy = []
 
-    userID = users[random.randint(0,len(users))]
+    for algoNum in range(len(ALGO_LIST)):
 
-    recommendList = getTopN(data,df,userID,N=4)
+        for simNum in range(len(SIM_LIST)):
 
-    print(recommendList)
+            rmseList = []
+
+            for i in range(n):
+                rmse = measureAccuracy(testDfList[i], trainDfList[i], ALGO_LIST[algoNum]['algo'], SIM_LIST[simNum])
+
+                rmseList.append(rmse)
+
+            for i in range(n):
+                print()
+                print('Fold Num:', i, 'Algo:', ALGO_LIST[algoNum]['name'], 'RMSE: %.4f' % (rmseList[i]))
+
+            overallRMSE = np.mean(rmseList)
+            rmseStdDev = np.std(rmseList)
+
+            print('****************************************')
+            print('Algo:', ALGO_LIST[algoNum]['name'],'Sim:', SIM_LIST[simNum]['name'])
+            print('Overall Average RMSE:', overallRMSE)
+            print('Overall RMSE Std Dev', rmseStdDev)
+            print('****************************************')
+
+            overallAccuracy.append([ALGO_LIST[algoNum]['name'], SIM_LIST[simNum]['name'], overallRMSE, rmseStdDev])
+
+
+    print()
+    print('FINAL RESULTS')
+
+    for each in overallAccuracy:
+        print(each)
+
+
+    print()
+    print('Time taken:', time.time()-start, 's')
+
+
+
 
 ############### END ################
 # The following code below is for reference for building future functions.
