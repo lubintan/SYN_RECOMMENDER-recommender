@@ -152,6 +152,8 @@ def filterByAgeGroups(df):
 
 def groupBy4Factors(inputDf):
 
+
+
     df = inputDf[[CLIENT_LABEL,AGE_LABEL]]
     df_under30s, df_30s, df_40s, df_above40s = filterByAgeGroups(df)
 
@@ -400,7 +402,7 @@ def gen72tables(df):
                           lifeStage, ',income level:', incomeLvl, ',entries:', entries)
 
                     thisDf.to_csv('tables_72//' + str(counter) +'_' + gender + '_' + ageGroup + '_' +
-                                  lifeStage + '_' + incomeLvl, index=False)
+                                  lifeStage + '_' + incomeLvl+'.csv', index=False)
 
 
 
@@ -409,7 +411,6 @@ if __name__ == '__main__':
 
     # Generate 4 groupings
     start = time.time()
-    # df = readAndAggregate('testData.csv')
     df = readAndAggregate('Raw Data.csv')
     df = groupBy4Factors(df)
     df.to_csv('output.csv', index=False)
