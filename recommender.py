@@ -26,7 +26,7 @@ ALGO_LIST = [
 
 INCLUDE_NAS_IN_RMSE = False
 RNG_SEED = 1
-NUM_FOLDS = 2 # must be at least 2
+NUM_FOLDS = 5 # must be at least 2
 
 def processData(inputFile, folds = NUM_FOLDS):
 
