@@ -27,6 +27,7 @@ ALGO_LIST = [
 INCLUDE_NAS_IN_RMSE = False
 RNG_SEED = 1
 NUM_FOLDS = 5 # must be at least 2
+K_RANGE = range(1,8)
 
 def processData(inputFile, folds = NUM_FOLDS):
 
@@ -129,6 +130,7 @@ def measureAccuracy(testSet, trainSet, overallDf, algo=None, sim=SIM_LIST[0], mi
     algo.k = max_k
 
     squaredErrorList = []
+    pointsTested = 0
 
 
     if includeNAs: #tests against all rated items in this table.
@@ -136,6 +138,8 @@ def measureAccuracy(testSet, trainSet, overallDf, algo=None, sim=SIM_LIST[0], mi
         for client in userIDs:
             thisDf = testSet[testSet['CLIENTS'] == client].reset_index(drop=True)
             num = len(items)
+            
+            pointsTested += num
 
             # print('Client:', client, 'Client Items:', len(list(thisDf.ITEM)),'Num Items to Test:', num)
 
@@ -184,6 +188,8 @@ def measureAccuracy(testSet, trainSet, overallDf, algo=None, sim=SIM_LIST[0], mi
             thisDf = testSet[testSet['CLIENTS'] == client].reset_index(drop=True)
 
             num = len(thisDf)
+            
+            pointsTested += num
 
             print('Client:', client, 'Client Items:', num)
 
@@ -216,8 +222,8 @@ def measureAccuracy(testSet, trainSet, overallDf, algo=None, sim=SIM_LIST[0], mi
                     # print('No actual k')
                     squaredErr = (predictedRating - actualRating) ** 2
                     squaredErrorList.append(squaredErr)
-
-    return np.sqrt(np.mean(squaredErrorList))
+    
+    return np.sqrt(np.mean(squaredErrorList)), len(squaredErrorList), pointsTested
 
 
 def evaluateRMSE():
@@ -227,7 +233,7 @@ def evaluateRMSE():
     onlyfiles.sort()
 
     # Comment this line out to iterate through all 72 tables.
-    # onlyfiles = ['50_Female_30s_Married_> 50K.csv', '51_Female_30s_Married_> 150K.csv']
+    # onlyfiles = ['50_Female_30s_Married_> 50K.csv', '47_Female_30s_Single_> 50K.csv']
 
     mainRMSE = []
     mainAlgo = []
@@ -241,12 +247,15 @@ def evaluateRMSE():
     for algoNum in range(len(ALGO_LIST)):
 
         if ALGO_LIST[algoNum]['name'] == 'KNN_Means':
-            kRange = range(1,8)
+            kRange = K_RANGE
         else:
             kRange=[0]
 
         for thisK in kRange:
             for simNum in range(len(SIM_LIST)):
+
+                squaredErrorsByTable = 0
+                pointsTestedByTable = 0
 
                 rmseByTable = []
                 stdDevByTable = []
@@ -264,6 +273,8 @@ def evaluateRMSE():
                     n = len(testDfList)
 
                     rmseList = []
+                    totalSquaredErrorsForThisTable = 0
+                    cumulativePointsTestedForThisTable = 0
 
                     for i in range(n):
                         print('Algo:', ALGO_LIST[algoNum]['name'], 'Sim Method:', SIM_LIST[simNum]['name'],
@@ -272,11 +283,14 @@ def evaluateRMSE():
 
                         min_k = thisK
                         max_k = thisK
-                        rmse = measureAccuracy(testDfList[i], trainDfList[i], overallDf, ALGO_LIST[algoNum]['algo'],
+                        rmse, numSquaredErrors, numPointsTested = measureAccuracy(testDfList[i], trainDfList[i], overallDf, ALGO_LIST[algoNum]['algo'],
                                                SIM_LIST[simNum],
                                                min_k=min_k, max_k=max_k)
+                        
 
                         rmseList.append(rmse)
+                        totalSquaredErrorsForThisTable += numSquaredErrors
+                        cumulativePointsTestedForThisTable += numPointsTested
 
                     for i in range(n):
                         print()
@@ -294,25 +308,31 @@ def evaluateRMSE():
 
                     rmseByTable.append(overallRMSE)
                     stdDevByTable.append(rmseStdDev)
+                    squaredErrorsByTable += totalSquaredErrorsForThisTable
+                    pointsTestedByTable += cumulativePointsTestedForThisTable
 
                     counter += 1
 
                     print('%.2f percent complete.' % (100 * counter / totalCount))
 
-                    forDfByTable.append(([ALGO_LIST[algoNum]['name'], SIM_LIST[simNum]['name'],
-                                          eachFile, overallRMSE, rmseStdDev,  min_k, max_k]))
+                    forDfByTable.append([ALGO_LIST[algoNum]['name'], SIM_LIST[simNum]['name'],
+                                          eachFile, overallRMSE, rmseStdDev,  min_k, max_k,
+                                         totalSquaredErrorsForThisTable, cumulativePointsTestedForThisTable])
 
                 mainRMSE.append(np.mean(rmseByTable))
                 mainAlgo.append(ALGO_LIST[algoNum]['name'])
                 mainSim.append(SIM_LIST[simNum]['name'])
-                forDf.append([mainAlgo[-1], mainSim[-1], mainRMSE[-1], min_k, max_k])
+                forDf.append([mainAlgo[-1], mainSim[-1], mainRMSE[-1], min_k, max_k,
+                             squaredErrorsByTable, pointsTestedByTable])
 
     print(mainAlgo)
     print(mainSim)
     print(mainRMSE)
 
-    mainDf = pd.DataFrame(data=forDf, columns=['Algo', 'Sim_Method', 'RMSE', 'MIN_K', 'MAX_K'])
-    tableDf = pd.DataFrame(data=forDfByTable, columns=['Algo', 'Sim_Method','File_Name','RMSE', 'RMSE Std Dev','MIN_K', 'MAX_K'])
+    mainDf = pd.DataFrame(data=forDf, columns=['Algo', 'Sim_Method', 'RMSE', 'MIN_K', 'MAX_K',
+                                               'Total RMSE Points', 'Total Tested Points'])
+    tableDf = pd.DataFrame(data=forDfByTable, columns=['Algo', 'Sim_Method','File_Name','RMSE', 'RMSE Std Dev',
+                                                       'MIN_K', 'MAX_K','RMSE Points', 'Tested Points'])
 
     print(mainDf)
     print()
