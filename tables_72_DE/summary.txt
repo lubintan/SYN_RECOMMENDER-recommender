@@ -1,0 +1,76 @@
+Time taken: 1.14 seconds
+Total Entries: 3924
+1 ,gender: Male ,age group: 20s ,life stage: Single ,income level: <50k ,entries: 56
+2 ,gender: Male ,age group: 20s ,life stage: Single ,income level: > 50K ,entries: 56
+3 ,gender: Male ,age group: 20s ,life stage: Single ,income level: > 150K ,entries: 56
+4 ,gender: Male ,age group: 20s ,life stage: Married ,income level: <50k ,entries: 56
+5 ,gender: Male ,age group: 20s ,life stage: Married ,income level: > 50K ,entries: 56
+6 ,gender: Male ,age group: 20s ,life stage: Married ,income level: > 150K ,entries: 56
+7 ,gender: Male ,age group: 20s ,life stage: Married with dependents ,income level: <50k ,entries: 56
+8 ,gender: Male ,age group: 20s ,life stage: Married with dependents ,income level: > 50K ,entries: 56
+9 ,gender: Male ,age group: 20s ,life stage: Married with dependents ,income level: > 150K ,entries: 56
+10 ,gender: Male ,age group: 30s ,life stage: Single ,income level: <50k ,entries: 77
+11 ,gender: Male ,age group: 30s ,life stage: Single ,income level: > 50K ,entries: 77
+12 ,gender: Male ,age group: 30s ,life stage: Single ,income level: > 150K ,entries: 77
+13 ,gender: Male ,age group: 30s ,life stage: Married ,income level: <50k ,entries: 77
+14 ,gender: Male ,age group: 30s ,life stage: Married ,income level: > 50K ,entries: 77
+15 ,gender: Male ,age group: 30s ,life stage: Married ,income level: > 150K ,entries: 77
+16 ,gender: Male ,age group: 30s ,life stage: Married with dependents ,income level: <50k ,entries: 77
+17 ,gender: Male ,age group: 30s ,life stage: Married with dependents ,income level: > 50K ,entries: 0
+18 ,gender: Male ,age group: 30s ,life stage: Married with dependents ,income level: > 150K ,entries: 0
+19 ,gender: Male ,age group: 40s ,life stage: Single ,income level: <50k ,entries: 56
+20 ,gender: Male ,age group: 40s ,life stage: Single ,income level: > 50K ,entries: 0
+21 ,gender: Male ,age group: 40s ,life stage: Single ,income level: > 150K ,entries: 0
+22 ,gender: Male ,age group: 40s ,life stage: Married ,income level: <50k ,entries: 56
+23 ,gender: Male ,age group: 40s ,life stage: Married ,income level: > 50K ,entries: 0
+24 ,gender: Male ,age group: 40s ,life stage: Married ,income level: > 150K ,entries: 0
+25 ,gender: Male ,age group: 40s ,life stage: Married with dependents ,income level: <50k ,entries: 56
+26 ,gender: Male ,age group: 40s ,life stage: Married with dependents ,income level: > 50K ,entries: 55
+27 ,gender: Male ,age group: 40s ,life stage: Married with dependents ,income level: > 150K ,entries: 56
+28 ,gender: Male ,age group: 50s ,life stage: Single ,income level: <50k ,entries: 29
+29 ,gender: Male ,age group: 50s ,life stage: Single ,income level: > 50K ,entries: 29
+30 ,gender: Male ,age group: 50s ,life stage: Single ,income level: > 150K ,entries: 29
+31 ,gender: Male ,age group: 50s ,life stage: Married ,income level: <50k ,entries: 29
+32 ,gender: Male ,age group: 50s ,life stage: Married ,income level: > 50K ,entries: 29
+33 ,gender: Male ,age group: 50s ,life stage: Married ,income level: > 150K ,entries: 29
+34 ,gender: Male ,age group: 50s ,life stage: Married with dependents ,income level: <50k ,entries: 29
+35 ,gender: Male ,age group: 50s ,life stage: Married with dependents ,income level: > 50K ,entries: 29
+36 ,gender: Male ,age group: 50s ,life stage: Married with dependents ,income level: > 150K ,entries: 29
+37 ,gender: Female ,age group: 20s ,life stage: Single ,income level: <50k ,entries: 56
+38 ,gender: Female ,age group: 20s ,life stage: Single ,income level: > 50K ,entries: 56
+39 ,gender: Female ,age group: 20s ,life stage: Single ,income level: > 150K ,entries: 56
+40 ,gender: Female ,age group: 20s ,life stage: Married ,income level: <50k ,entries: 56
+41 ,gender: Female ,age group: 20s ,life stage: Married ,income level: > 50K ,entries: 56
+42 ,gender: Female ,age group: 20s ,life stage: Married ,income level: > 150K ,entries: 56
+43 ,gender: Female ,age group: 20s ,life stage: Married with dependents ,income level: <50k ,entries: 56
+44 ,gender: Female ,age group: 20s ,life stage: Married with dependents ,income level: > 50K ,entries: 56
+45 ,gender: Female ,age group: 20s ,life stage: Married with dependents ,income level: > 150K ,entries: 56
+46 ,gender: Female ,age group: 30s ,life stage: Single ,income level: <50k ,entries: 77
+47 ,gender: Female ,age group: 30s ,life stage: Single ,income level: > 50K ,entries: 77
+48 ,gender: Female ,age group: 30s ,life stage: Single ,income level: > 150K ,entries: 77
+49 ,gender: Female ,age group: 30s ,life stage: Married ,income level: <50k ,entries: 77
+50 ,gender: Female ,age group: 30s ,life stage: Married ,income level: > 50K ,entries: 77
+51 ,gender: Female ,age group: 30s ,life stage: Married ,income level: > 150K ,entries: 77
+52 ,gender: Female ,age group: 30s ,life stage: Married with dependents ,income level: <50k ,entries: 77
+53 ,gender: Female ,age group: 30s ,life stage: Married with dependents ,income level: > 50K ,entries: 77
+54 ,gender: Female ,age group: 30s ,life stage: Married with dependents ,income level: > 150K ,entries: 77
+55 ,gender: Female ,age group: 40s ,life stage: Single ,income level: <50k ,entries: 56
+56 ,gender: Female ,age group: 40s ,life stage: Single ,income level: > 50K ,entries: 0
+57 ,gender: Female ,age group: 40s ,life stage: Single ,income level: > 150K ,entries: 0
+58 ,gender: Female ,age group: 40s ,life stage: Married ,income level: <50k ,entries: 56
+59 ,gender: Female ,age group: 40s ,life stage: Married ,income level: > 50K ,entries: 0
+60 ,gender: Female ,age group: 40s ,life stage: Married ,income level: > 150K ,entries: 0
+61 ,gender: Female ,age group: 40s ,life stage: Married with dependents ,income level: <50k ,entries: 56
+62 ,gender: Female ,age group: 40s ,life stage: Married with dependents ,income level: > 50K ,entries: 56
+63 ,gender: Female ,age group: 40s ,life stage: Married with dependents ,income level: > 150K ,entries: 0
+64 ,gender: Female ,age group: 50s ,life stage: Single ,income level: <50k ,entries: 29
+65 ,gender: Female ,age group: 50s ,life stage: Single ,income level: > 50K ,entries: 29
+66 ,gender: Female ,age group: 50s ,life stage: Single ,income level: > 150K ,entries: 29
+67 ,gender: Female ,age group: 50s ,life stage: Married ,income level: <50k ,entries: 29
+68 ,gender: Female ,age group: 50s ,life stage: Married ,income level: > 50K ,entries: 29
+69 ,gender: Female ,age group: 50s ,life stage: Married ,income level: > 150K ,entries: 29
+70 ,gender: Female ,age group: 50s ,life stage: Married with dependents ,income level: <50k ,entries: 29
+71 ,gender: Female ,age group: 50s ,life stage: Married with dependents ,income level: > 50K ,entries: 29
+72 ,gender: Female ,age group: 50s ,life stage: Married with dependents ,income level: > 150K ,entries: 29
+Time taken: 1.47 seconds
+
