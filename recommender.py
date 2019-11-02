@@ -231,6 +231,7 @@ def evaluateRMSE():
 
     onlyfiles = [f for f in listdir(folderPath) if isfile(join(folderPath, f))]
     onlyfiles.sort()
+    onlyfiles.remove('summary.txt')
 
     # Comment this line out to iterate through all 72 tables.
     # onlyfiles = ['50_Female_30s_Married_> 50K.csv', '47_Female_30s_Single_> 50K.csv']
@@ -342,8 +343,331 @@ def evaluateRMSE():
     tableDf.to_csv('results//tableResults.csv')
 
 
+def tableSelector(gender, agegroup, lifestage, incomegroup):
+    GENDER_GROUP_LIST = ['Male', 'Female']
+    LIFESTAGE_GROUP_LIST = ['Single', 'Married', 'Married with dependents']
+    AGE_GROUP_LIST = ['20s', '30s', '40s', '50s']
+    INCOME_GROUP_LIST = ['<50k', '> 50K', '> 150K']
 
-def getTopN(df, userID, N = 1, algo = ALGO_LIST[0], sim = SIM_LIST[0]):
+    filename = ''
+
+    if gender == 0:
+        if agegroup == 0:
+            if lifestage == 0:
+                if incomegroup == 0:
+                    filename = '1_Male_20s_Single_<50k.csv'
+
+                elif incomegroup == 1:
+                    filename = '2_Male_20s_Single_> 50K.csv'
+
+                elif incomegroup == 2:
+                    filename = '3_Male_20s_Single_> 150K.csv'
+
+            elif lifestage == 1:
+                if incomegroup == 0:
+                    filename = '4_Male_20s_Married_<50k.csv'
+
+                elif incomegroup == 1:
+                    filename = '5_Male_20s_Married_> 50K.csv'
+
+                elif incomegroup == 2:
+                    filename = '6_Male_20s_Married_> 150K.csv'
+
+            elif lifestage == 2:
+                if incomegroup == 0:
+                    filename = '7_Male_20s_Married with dependents_<50k.csv'
+
+                elif incomegroup == 1:
+                    filename = '8_Male_20s_Married with dependents_> 50K.csv'
+
+                elif incomegroup == 2:
+                    filename = '9_Male_20s_Married with dependents_> 150K.csv'
+
+        elif agegroup == 1:
+            if lifestage == 0:
+                if incomegroup == 0:
+                    filename = '10_Male_30s_Single_<50k.csv'
+
+                elif incomegroup == 1:
+                    filename = '11_Male_30s_Single_> 50K.csv'
+
+                elif incomegroup == 2:
+                    filename = '12_Male_30s_Single_> 150K.csv'
+
+            elif lifestage == 1:
+                if incomegroup == 0:
+                    filename = '13_Male_30s_Married_<50k.csv'
+
+                elif incomegroup == 1:
+                    filename = '14_Male_30s_Married_> 50K.csv'
+
+                elif incomegroup == 2:
+                    filename = '15_Male_30s_Married_> 150K.csv'
+
+            elif lifestage == 2:
+                if incomegroup == 0:
+                    filename = '16_Male_30s_Married with dependents_<50k.csv'
+
+                elif incomegroup == 1:
+                    filename = '17_Male_30s_Married with dependents_> 50K.csv'
+
+                elif incomegroup == 2:
+                    filename = '18_Male_30s_Married with dependents_> 150K.csv'
+
+        elif agegroup == 2:
+            if lifestage == 0:
+                if incomegroup == 0:
+                    filename = '19_Male_40s_Single_<50k.csv'
+
+                elif incomegroup == 1:
+                    filename = '20_Male_40s_Single_> 50K.csv'
+
+                elif incomegroup == 2:
+                    filename = '21_Male_40s_Single_> 150K.csv'
+
+            elif lifestage == 1:
+                if incomegroup == 0:
+                    filename = '22_Male_40s_Married_<50k.csv'
+
+                elif incomegroup == 1:
+                    filename = '23_Male_40s_Married_> 50K.csv'
+
+                elif incomegroup == 2:
+                    filename = '24_Male_40s_Married_> 150K.csv'
+
+            elif lifestage == 2:
+                if incomegroup == 0:
+                    filename = '25_Male_40s_Married with dependents_<50k.csv'
+
+                elif incomegroup == 1:
+                    filename = '26_Male_40s_Married with dependents_> 50K.csv'
+
+                elif incomegroup == 2:
+                    filename = '27_Male_40s_Married with dependents_> 150K.csv'
+
+        elif agegroup == 3:
+            if lifestage == 0:
+                if incomegroup == 0:
+                    filename = '28_Male_50s_Single_<50k.csv'
+
+                elif incomegroup == 1:
+                    filename = '29_Male_50s_Single_> 50K.csv'
+
+                elif incomegroup == 2:
+                    filename = '30_Male_50s_Single_> 150K.csv'
+
+            elif lifestage == 1:
+                if incomegroup == 0:
+                    filename = '31_Male_50s_Married_<50k.csv'
+
+                elif incomegroup == 1:
+                    filename = '32_Male_50s_Married_> 50K.csv'
+
+                elif incomegroup == 2:
+                    filename = '33_Male_50s_Married_> 150K.csv'
+
+            elif lifestage == 2:
+                if incomegroup == 0:
+                    filename = '34_Male_50s_Married with dependents_<50k.csv'
+
+                elif incomegroup == 1:
+                    filename = '35_Male_50s_Married with dependents_> 50K.csv'
+
+                elif incomegroup == 2:
+                    filename = '36_Male_50s_Married with dependents_> 150K.csv'
+
+    elif gender == 1:
+        if agegroup == 0:
+            if lifestage == 0:
+                if incomegroup == 0:
+                    filename = '37_Female_20s_Single_<50k.csv'
+
+                elif incomegroup == 1:
+                    filename = '38_Female_20s_Single_> 50K.csv'
+
+                elif incomegroup == 2:
+                    filename = '39_Female_20s_Single_> 150K.csv'
+
+            elif lifestage == 1:
+                if incomegroup == 0:
+                    filename = '40_Female_20s_Married_<50k.csv'
+
+                elif incomegroup == 1:
+                    filename = '41_Female_20s_Married_> 50K.csv'
+
+                elif incomegroup == 2:
+                    filename = '42_Female_20s_Married_> 150K.csv'
+
+            elif lifestage == 2:
+                if incomegroup == 0:
+                    filename = '43_Female_20s_Married with dependents_<50k.csv'
+
+                elif incomegroup == 1:
+                    filename = '44_Female_20s_Married with dependents_> 50K.csv'
+
+                elif incomegroup == 2:
+                    filename = '45_Female_20s_Married with dependents_> 150K.csv'
+
+        elif agegroup == 1:
+            if lifestage == 0:
+                if incomegroup == 0:
+                    filename = '46_Female_30s_Single_<50k.csv'
+
+                elif incomegroup == 1:
+                    filename = '47_Female_30s_Single_> 50K.csv'
+
+                elif incomegroup == 2:
+                    filename = '48_Female_30s_Single_> 150K.csv'
+
+            elif lifestage == 1:
+                if incomegroup == 0:
+                    filename = '49_Female_30s_Married_<50k.csv'
+
+                elif incomegroup == 1:
+                    filename = '50_Female_30s_Married_> 50K.csv'
+
+                elif incomegroup == 2:
+                    filename = '51_Female_30s_Married_> 150K.csv'
+
+            elif lifestage == 2:
+                if incomegroup == 0:
+                    filename = '52_Female_30s_Married with dependents_<50k.csv'
+
+                elif incomegroup == 1:
+                    filename = '53_Female_30s_Married with dependents_> 50K.csv'
+
+                elif incomegroup == 2:
+                    filename = '54_Female_30s_Married with dependents_> 150K.csv'
+
+        elif agegroup == 2:
+            if lifestage == 0:
+                if incomegroup == 0:
+                    filename = '55_Female_40s_Single_<50k.csv'
+
+                elif incomegroup == 1:
+                    filename = '56_Female_40s_Single_> 50K.csv'
+
+                elif incomegroup == 2:
+                    filename = '57_Female_40s_Single_> 150K.csv'
+
+            elif lifestage == 1:
+                if incomegroup == 0:
+                    filename = '58_Female_40s_Married_<50k.csv'
+
+                elif incomegroup == 1:
+                    filename = '59_Female_40s_Married_> 50K.csv'
+
+                elif incomegroup == 2:
+                    filename = '60_Female_40s_Married_> 150K.csv'
+
+            elif lifestage == 2:
+                if incomegroup == 0:
+                    filename = '61_Female_40s_Married with dependents_<50k.csv'
+
+                elif incomegroup == 1:
+                    filename = '62_Female_40s_Married with dependents_> 50K.csv'
+
+                elif incomegroup == 2:
+                    filename = '63_Female_40s_Married with dependents_> 150K.csv'
+
+        elif agegroup == 3:
+            if lifestage == 0:
+                if incomegroup == 0:
+                    filename = '64_Female_50s_Single_<50k.csv'
+
+                elif incomegroup == 1:
+                    filename = '65_Female_50s_Single_> 50K.csv'
+
+                elif incomegroup == 2:
+                    filename = '66_Female_50s_Single_> 150K.csv'
+
+            elif lifestage == 1:
+                if incomegroup == 0:
+                    filename = '67_Female_50s_Married_<50k.csv'
+
+                elif incomegroup == 1:
+                    filename = '68_Female_50s_Married_> 50K.csv'
+
+                elif incomegroup == 2:
+                    filename = '69_Female_50s_Married_> 150K.csv'
+
+            elif lifestage == 2:
+                if incomegroup == 0:
+                    filename = '70_Female_50s_Married with dependents_<50k.csv'
+
+                elif incomegroup == 1:
+                    filename = '71_Female_50s_Married with dependents_> 50K.csv'
+
+                elif incomegroup == 2:
+                    filename = '72_Female_50s_Married with dependents_> 150K.csv'
+
+    return filename
+
+
+def generateUserInputs(userInputList):
+
+    PRODUCT_LIST = [
+        'Retirement - RP with Maturity',
+        'Retirement - RP without Maturity',
+        'Retirement - RP with Life payout',
+        'Retirement - SP',
+        'RP Anticipated Endowment (Regular Pay)',
+        'RP Anticipated Endowment (Very Short PPT)',
+        'RP Anticipated Endowment (Short PPT)',
+        'RP Anticipated Endowment Plans (Mid PPT)',
+        'RP Anticipated Endowment (Long PPT)',
+        'SP Anticipated Endowment',
+        'RP Classic Endowment (Regular Pay)',
+        'RP Classic Endowment (Very Short PPT)',
+        'RP Classic Endowment (Short PPT)',
+        'RP Classic Endowment (Mid PPT)',
+        'RP Classic Endowment (Long PPT)',
+        'SP Classic Endowment',
+        'Education Funding Plans',
+        'RP ILP - Accumulation',
+        'SP ILP - Accumulation',
+        'ILP - Protection (Face Plus)',
+        'ILP - Protection (Level Face)',
+        'Level Term',
+        'Renewable Term',
+        'Reducing Term',
+        'Refundable Term',
+        'Disability Income',
+        'Other Term',
+        'Long Term Care',
+        'Integrated Shield',
+        'International H&S',
+        'Other H&S',
+        'Natal Insurance',
+        'Accident',
+        'Other A&H',
+        'Standalone Critical Illness',
+        'Early Stage Critical Illness',
+        'Cancer',
+        'Gender Specific',
+        'Elderly',
+        'RP WL Protection (with multiplier)',
+        'RP WL Protection (without multiplier)',
+        'SP WL Protection  ',
+        'RP WL Income',
+        'SP WL Income',
+        'Trad UL',
+        'VUL',
+        'Indexed UL',
+    ]
+
+    entry = {}
+    entry['CLIENTS'] = userInputList[0]
+    # entry['GENDER'] = userInputList[1]
+    # entry['AGE_GROUP'] = userInputList[2]
+    # entry['LIFESTAGE'] = userInputList[3]
+    # entry['INCOME_GROUP'] = userInputList[4]
+    entry['ITEM'] = PRODUCT_LIST[userInputList[5]]
+    entry['RATING'] = userInputList[6]
+
+    return entry
+
+def getTopN(data, processedDf, userID, N = 1, algo = ALGO_LIST[0], sim = SIM_LIST[0]):
     print('Getting Top %i Recommendations.'%(N))
     print('Algorithm:', algo['name'])
     print('Similarity Method:', sim['name'])
@@ -352,29 +676,27 @@ def getTopN(df, userID, N = 1, algo = ALGO_LIST[0], sim = SIM_LIST[0]):
     algorithm = algo['algo']
     algorithm.sim_options = sim
 
-    products = df.columns[1:]
-    userEntry = df[df['CLIENTS']== userID]
+    products = list(processedDf.ITEM.unique())
+    userNonEmpty = list(processedDf[processedDf['CLIENTS'] == userID].ITEM)
 
     # Don't ask for recommendation on already purchased products
-    userEmptyItems = []
 
-    for prod in products:
-
-        if userEntry[prod].values[0] == 0:
-            userEmptyItems.append(prod)
-
-    if len(userEmptyItems) == 48:
+    if len(userNonEmpty) == 0:
         print("ERROR!!\nThis user has not rated any product.")
         exit()
 
-    print('This user has rated %i items.'%(48 - len(userEmptyItems)))
-    data = Dataset.load_from_df(df, reader=Reader())
+    print('This user has rated %i items.'%(len(userNonEmpty)))
+
+    for each in userNonEmpty:
+        print(each)
+
     trainingSet = data.build_full_trainset()
     algorithm.fit(trainingSet)
 
     predict_ratings = []
 
-    for el in userEmptyItems:
+    for el in products:
+        if el in userNonEmpty: continue
         prediction = algorithm.predict(userID, el)
         predict_ratings.append([el, prediction.est])
 
@@ -384,13 +706,44 @@ def getTopN(df, userID, N = 1, algo = ALGO_LIST[0], sim = SIM_LIST[0]):
 
     predict_df = predict_df.sort_values(by=columns[1], ascending=False,)
 
-    print(predict_df)
+    print(predict_df.reset_index(drop=True))
 
     return predict_df[:N].reset_index(drop=True)
 
 if __name__ == "__main__":
 
     start = time.time()
+
+    # inputs= [
+    #     [99991, 1, 1, 1, 1, 1, 1],
+    #     [99991, 1, 1, 1, 1, 3, 2],
+    #     ]
+    #
+    # folderPath = 'tables_72_DE'
+    # filename = tableSelector(gender=inputs[0][1], agegroup=inputs[0][2],
+    #                          lifestage=inputs[0][3], incomegroup=inputs[0][4])
+    #
+    # full_file = folderPath + '//' + filename
+    #
+    # df = pd.read_csv(full_file)
+    # df.drop(labels=['GENDER', 'AGE GROUP', 'LIFESTAGE', 'INCOME GROUP'], inplace=True, axis=1)
+    # df = processDfInto3Cols(df)
+    #
+    # data = Dataset.load_from_df(df, reader=Reader())
+    #
+    # print(filename)
+    #
+    # # entries = []
+    # # for eachInput in inputs:
+    # #     entry = generateUserInputs(eachInput)
+    # #     inputDf = pd.DataFrame([entry])
+    # #     df = pd.concat([df,inputDf]).reset_index(drop=True)
+    # #
+    # # print(df)
+    #
+    # getTopN(data, df,userID=3839)
+
+
 
     evaluateRMSE()
 
