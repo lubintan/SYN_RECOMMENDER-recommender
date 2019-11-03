@@ -8,6 +8,8 @@ import random, time
 import numpy as np
 from os import listdir
 from os.path import isfile, join
+import PySimpleGUI as sg
+
 
 # Parameters
 
@@ -24,10 +26,65 @@ ALGO_LIST = [
             {"name": 'SVD', "algo": SVD(verbose=False)},
             ]
 
+GENDER_GROUP_LIST = ['Male', 'Female']
+LIFESTAGE_GROUP_LIST = ['Single', 'Married','Married with dependents']
+AGE_GROUP_LIST = ['20s', '30s', '40s', '50s']
+INCOME_GROUP_LIST = ['<50k', '> 50K', '> 150K']
+
+PRODUCT_LIST = [
+        'Retirement - RP with Maturity',
+        'Retirement - RP without Maturity',
+        'Retirement - RP with Life payout',
+        'Retirement - SP',
+        'RP Anticipated Endowment (Regular Pay)',
+        'RP Anticipated Endowment (Very Short PPT)',
+        'RP Anticipated Endowment (Short PPT)',
+        'RP Anticipated Endowment Plans (Mid PPT)',
+        'RP Anticipated Endowment (Long PPT)',
+        'SP Anticipated Endowment',
+        'RP Classic Endowment (Regular Pay)',
+        'RP Classic Endowment (Very Short PPT)',
+        'RP Classic Endowment (Short PPT)',
+        'RP Classic Endowment (Mid PPT)',
+        'RP Classic Endowment (Long PPT)',
+        'SP Classic Endowment',
+        'Education Funding Plans',
+        'RP ILP - Accumulation',
+        'SP ILP - Accumulation',
+        'ILP - Protection (Face Plus)',
+        'ILP - Protection (Level Face)',
+        'Level Term',
+        'Renewable Term',
+        'Reducing Term',
+        'Refundable Term',
+        'Disability Income',
+        'Other Term',
+        'Long Term Care',
+        'Integrated Shield',
+        'International H&S',
+        'Other H&S',
+        'Natal Insurance',
+        'Accident',
+        'Other A&H',
+        'Standalone Critical Illness',
+        'Early Stage Critical Illness',
+        'Cancer',
+        'Gender Specific',
+        'Elderly',
+        'RP WL Protection (with multiplier)',
+        'RP WL Protection (without multiplier)',
+        'SP WL Protection  ',
+        'RP WL Income',
+        'SP WL Income',
+        'Trad UL',
+        'VUL',
+        'Indexed UL',
+    ]
+
 INCLUDE_NAS_IN_RMSE = False
 RNG_SEED = 1
 NUM_FOLDS = 5 # must be at least 2
-K_RANGE = range(1,8)
+K_RANGE = range(1,9)
 
 def processData(inputFile, folds = NUM_FOLDS):
 
@@ -606,56 +663,6 @@ def tableSelector(gender, agegroup, lifestage, incomegroup):
 
 def generateUserInputs(userInputList):
 
-    PRODUCT_LIST = [
-        'Retirement - RP with Maturity',
-        'Retirement - RP without Maturity',
-        'Retirement - RP with Life payout',
-        'Retirement - SP',
-        'RP Anticipated Endowment (Regular Pay)',
-        'RP Anticipated Endowment (Very Short PPT)',
-        'RP Anticipated Endowment (Short PPT)',
-        'RP Anticipated Endowment Plans (Mid PPT)',
-        'RP Anticipated Endowment (Long PPT)',
-        'SP Anticipated Endowment',
-        'RP Classic Endowment (Regular Pay)',
-        'RP Classic Endowment (Very Short PPT)',
-        'RP Classic Endowment (Short PPT)',
-        'RP Classic Endowment (Mid PPT)',
-        'RP Classic Endowment (Long PPT)',
-        'SP Classic Endowment',
-        'Education Funding Plans',
-        'RP ILP - Accumulation',
-        'SP ILP - Accumulation',
-        'ILP - Protection (Face Plus)',
-        'ILP - Protection (Level Face)',
-        'Level Term',
-        'Renewable Term',
-        'Reducing Term',
-        'Refundable Term',
-        'Disability Income',
-        'Other Term',
-        'Long Term Care',
-        'Integrated Shield',
-        'International H&S',
-        'Other H&S',
-        'Natal Insurance',
-        'Accident',
-        'Other A&H',
-        'Standalone Critical Illness',
-        'Early Stage Critical Illness',
-        'Cancer',
-        'Gender Specific',
-        'Elderly',
-        'RP WL Protection (with multiplier)',
-        'RP WL Protection (without multiplier)',
-        'SP WL Protection  ',
-        'RP WL Income',
-        'SP WL Income',
-        'Trad UL',
-        'VUL',
-        'Indexed UL',
-    ]
-
     entry = {}
     entry['CLIENTS'] = userInputList[0]
     # entry['GENDER'] = userInputList[1]
@@ -710,6 +717,31 @@ def getTopN(data, processedDf, userID, N = 1, algo = ALGO_LIST[0], sim = SIM_LIS
 
     return predict_df[:N].reset_index(drop=True)
 
+
+def runGUI():
+
+    prodGUI = []
+    for prod in PRODUCT_LIST:
+        prodGUI.append([sg.Text(prod), sg.Combo(['NA',1,2], size=(15,1))])
+
+
+    layout = [
+        [sg.Text('Please enter the following information:')],
+        [sg.Text('Client ID'), sg.InputText('clientID')],
+        [sg.Text('Gender'), sg.Combo(GENDER_GROUP_LIST, size=(15,1)), sg.Text('Age Group'), sg.Combo(AGE_GROUP_LIST, size=(15,1))],
+        [sg.Text('Lifestage'), sg.Combo(LIFESTAGE_GROUP_LIST, size=(15,1)), sg.Text('Income Group'), sg.Combo(INCOME_GROUP_LIST, size=(15,1))],
+        ]
+
+    layout += prodGUI
+
+    layout += [
+        [sg.Submit(), sg.Cancel()]
+    ]
+
+    window = sg.Window('Recommender Inputs').Layout([[sg.Column(layout, size=(600,800), scrollable=True)]])
+    button, values = window.Read()
+
+    print(button, values)
 if __name__ == "__main__":
 
     start = time.time()
@@ -744,8 +776,8 @@ if __name__ == "__main__":
     # getTopN(data, df,userID=3839)
 
 
-
-    evaluateRMSE()
+    runGUI()
+    # evaluateRMSE()
 
     print()
     print('Time taken:', time.time()-start, 's')
