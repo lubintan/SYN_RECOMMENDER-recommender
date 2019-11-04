@@ -682,18 +682,16 @@ def generateUserInputs(userID, productIndex, rating):
 
     return entry
 
-def getTopN(data, processedDf, userID, N = 3, algo = ALGO_LIST[1], sim = SIM_LIST[0]):
+def getTopN(data, processedDf, userID, N = 3, algo = ALGO_LIST[1], sim = SIM_LIST[0], kValue = 5):
     print('Getting Top %i Recommendations.'%(N))
     print('Algorithm:', algo['name'])
     print('Similarity Method:', sim['name'])
     print('Client ID:', userID)
 
-    print(processedDf)
-    print('processed:',len(processedDf))
-
-
     algorithm = algo['algo']
     algorithm.sim_options = sim
+    algorithm.min_k = kValue
+    algorithm.k = kValue
 
     products = list(processedDf.ITEM.unique())
     userNonEmpty = list(processedDf[processedDf['CLIENTS'] == userID].ITEM)
@@ -775,69 +773,70 @@ def runGUI():
     return button, values
 
 def getTopNFromGUI():
+    while True:
+        # run this just to get PRODUCT_LIST populated
+        processData('tables_72_DE/50_Female_30s_Married_> 50K.csv')
 
-    # run this just to get PRODUCT_LIST populated
-    processData('tables_72_DE/50_Female_30s_Married_> 50K.csv')
+        button, values = runGUI()
 
-    button, values = runGUI()
-    
-    if button == 'Submit':
-        userID = values[0]
-        gender = values[1]
-        agegroup = values[2]
-        lifestage = values[3]
-        incomegroup = values[4]
+        if button == 'Submit':
+            userID = values[0]
+            gender = values[1]
+            agegroup = values[2]
+            lifestage = values[3]
+            incomegroup = values[4]
 
-        inputs = values[5:]
+            inputs = values[5:]
 
-    else:
-        print('User Cancelled The Action.')
-        exit()
+        else:
+            print('User Cancelled The Action.')
+            exit()
 
-    filename = tableSelector(gender = gender, agegroup = agegroup,
-                             lifestage = lifestage, incomegroup= incomegroup)
+        filename = tableSelector(gender = gender, agegroup = agegroup,
+                                 lifestage = lifestage, incomegroup= incomegroup)
 
-    print('Reading from file:', filename)
+        print('Reading from file:', filename)
 
-    folderPath = 'tables_72_DE'
+        folderPath = 'tables_72_DE'
 
-    full_file = folderPath + '//' + filename
+        full_file = folderPath + '//' + filename
 
-    df = pd.read_csv(full_file)
-    df.drop(labels=['GENDER', 'AGE GROUP', 'LIFESTAGE', 'INCOME GROUP'], inplace=True, axis=1)
-    df = processDfInto3Cols(df)
+        df = pd.read_csv(full_file)
+        df.drop(labels=['GENDER', 'AGE GROUP', 'LIFESTAGE', 'INCOME GROUP'], inplace=True, axis=1)
+        df = processDfInto3Cols(df)
 
-    for i in range(len(inputs)):
-        if inputs[i]!='NA':
-            entry = generateUserInputs(userID, productIndex=i, rating = inputs[i])
-            inputDf = pd.DataFrame([entry])
-            df = pd.concat([df,inputDf]).reset_index(drop=True)
+        for i in range(len(inputs)):
+            if inputs[i]!='NA':
+                entry = generateUserInputs(userID, productIndex=i, rating = inputs[i])
+                inputDf = pd.DataFrame([entry])
+                df = pd.concat([df,inputDf]).reset_index(drop=True)
 
-    data = Dataset.load_from_df(df, reader=Reader())
+        data = Dataset.load_from_df(df, reader=Reader())
 
-    result, allNSameRating, moreOutsideN = getTopN(data, df, userID, N=TOP_N)
+        result, allNSameRating, moreOutsideN = getTopN(data, df, userID, N=TOP_N, algo=ALGO_LIST[1], sim=SIM_LIST[0], kValue=5)
 
-    print(result)
-    print(allNSameRating)
-    print(moreOutsideN)
+        print(result)
+        print(allNSameRating)
+        print(moreOutsideN)
 
-    resultString  = 'Here are the top %i recommendations.'%(TOP_N)
+        resultString  = 'Here are the top %i recommendations:'%(TOP_N)
 
-    for i in range(len(result)):
-        resultString += '\n'
-        resultString += '%i. '%(i+1)
-        resultString += result.iloc[i].ITEM
+        for i in range(len(result)):
+            resultString += '\n\n'
+            resultString += '%i. '%(i+1)
+            resultString += result.iloc[i].ITEM
+            print(result.iloc[i].ITEM)
 
-    if allNSameRating:
-        resultString += '\n\n'
-        resultString += 'Note: These recommendations have the same predicted ratings.'
+        if allNSameRating:
+            resultString += '\n\n\n'
+            resultString += 'Note: These recommendations have the same predicted ratings.'
 
-    if moreOutsideN:
-        resultString += '\n\n'
-        resultString += 'Note: There are further products with the same predicted ratings outside of these top %i recommendations.'%(TOP_N)
+        if moreOutsideN:
+            resultString += '\n\n\n'
+            resultString += 'Note: There are further products with the same predicted ratings outside of these top %i recommendations.'%(TOP_N)
 
 
-    sg.Popup(resultString)
+        sg.Popup(resultString+'\n\n\n\n\n')
 
 def plotKs(inputFile = 'results/overallResults.csv'):
 
@@ -903,11 +902,12 @@ if __name__ == "__main__":
     start = time.time()
 
     # evaluateRMSE()
-    # while True:
-    #     getTopNFromGUI()
 
-    plotKs()
-    plotBarChart()
+    getTopNFromGUI()
+
+    # plotKs()
+
+    # plotBarChart()
 
     print()
     print('Time taken:', time.time()-start, 's')
