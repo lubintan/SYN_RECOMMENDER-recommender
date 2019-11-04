@@ -1,0 +1,611 @@
+,Algo,Sim_Method,File_Name,RMSE,RMSE Std Dev,MIN_K,MAX_K,RMSE Points,Tested Points
+0,SlopeOne,pearson,10_Male_30s_Single_<50k.csv,0.358570271,0.04106062,0,0,642,642
+1,SlopeOne,pearson,11_Male_30s_Single_> 50K.csv,0.373990253,0.039583638,0,0,765,765
+2,SlopeOne,pearson,12_Male_30s_Single_> 150K.csv,0.374946092,0.054566827,0,0,810,810
+3,SlopeOne,pearson,13_Male_30s_Married_<50k.csv,0.344393951,0.046227488,0,0,662,662
+4,SlopeOne,pearson,14_Male_30s_Married_> 50K.csv,0.353635053,0.027564777,0,0,776,776
+5,SlopeOne,pearson,15_Male_30s_Married_> 150K.csv,0.362883665,0.025471967,0,0,847,847
+6,SlopeOne,pearson,16_Male_30s_Married with dependents_<50k.csv,0.348664841,0.038208329,0,0,693,693
+7,SlopeOne,pearson,19_Male_40s_Single_<50k.csv,0.323315615,0.025816448,0,0,504,504
+8,SlopeOne,pearson,1_Male_20s_Single_<50k.csv,0.345938675,0.047661712,0,0,420,420
+9,SlopeOne,pearson,22_Male_40s_Married_<50k.csv,0.301278888,0.027516761,0,0,505,505
+10,SlopeOne,pearson,25_Male_40s_Married with dependents_<50k.csv,0.314978867,0.02208963,0,0,526,526
+11,SlopeOne,pearson,26_Male_40s_Married with dependents_> 50K.csv,0.318598808,0.021336629,0,0,673,673
+12,SlopeOne,pearson,27_Male_40s_Married with dependents_> 150K.csv,0.329160963,0.04069011,0,0,757,757
+13,SlopeOne,pearson,28_Male_50s_Single_<50k.csv,0.25044026,0.028557789,0,0,196,196
+14,SlopeOne,pearson,29_Male_50s_Single_> 50K.csv,0.295107478,0.046350651,0,0,249,249
+15,SlopeOne,pearson,2_Male_20s_Single_> 50K.csv,0.360972265,0.029547905,0,0,431,431
+16,SlopeOne,pearson,30_Male_50s_Single_> 150K.csv,0.257023953,0.022164649,0,0,291,291
+17,SlopeOne,pearson,31_Male_50s_Married_<50k.csv,0.250589333,0.050834869,0,0,210,210
+18,SlopeOne,pearson,32_Male_50s_Married_> 50K.csv,0.261550778,0.02198387,0,0,262,262
+19,SlopeOne,pearson,33_Male_50s_Married_> 150K.csv,0.277615312,0.01936612,0,0,324,324
+20,SlopeOne,pearson,34_Male_50s_Married with dependents_<50k.csv,0.237160332,0.049616195,0,0,194,194
+21,SlopeOne,pearson,35_Male_50s_Married with dependents_> 50K.csv,0.250512057,0.022574582,0,0,247,247
+22,SlopeOne,pearson,36_Male_50s_Married with dependents_> 150K.csv,0.275609948,0.032435317,0,0,320,320
+23,SlopeOne,pearson,37_Female_20s_Single_<50k.csv,0.353972299,0.038544395,0,0,486,486
+24,SlopeOne,pearson,38_Female_20s_Single_> 50K.csv,0.371328312,0.038426996,0,0,478,478
+25,SlopeOne,pearson,39_Female_20s_Single_> 150K.csv,0.331212929,0.04871128,0,0,487,487
+26,SlopeOne,pearson,3_Male_20s_Single_> 150K.csv,0.35989372,0.042230311,0,0,433,433
+27,SlopeOne,pearson,40_Female_20s_Married_<50k.csv,0.328885093,0.030395541,0,0,439,439
+28,SlopeOne,pearson,41_Female_20s_Married_> 50K.csv,0.372527403,0.059271432,0,0,499,499
+29,SlopeOne,pearson,42_Female_20s_Married_> 150K.csv,0.354776499,0.058896498,0,0,500,500
+30,SlopeOne,pearson,43_Female_20s_Married with dependents_<50k.csv,0.331839885,0.023867682,0,0,444,444
+31,SlopeOne,pearson,44_Female_20s_Married with dependents_> 50K.csv,0.370189092,0.065194056,0,0,531,531
+32,SlopeOne,pearson,45_Female_20s_Married with dependents_> 150K.csv,0.349825365,0.053573043,0,0,557,557
+33,SlopeOne,pearson,46_Female_30s_Single_<50k.csv,0.345860089,0.044567973,0,0,727,727
+34,SlopeOne,pearson,47_Female_30s_Single_> 50K.csv,0.389138053,0.03182461,0,0,841,841
+35,SlopeOne,pearson,48_Female_30s_Single_> 150K.csv,0.382895002,0.050657305,0,0,882,882
+36,SlopeOne,pearson,49_Female_30s_Married_<50k.csv,0.34283854,0.044402351,0,0,709,709
+37,SlopeOne,pearson,4_Male_20s_Married_<50k.csv,0.31232821,0.039408726,0,0,387,387
+38,SlopeOne,pearson,50_Female_30s_Married_> 50K.csv,0.38738406,0.039023828,0,0,854,854
+39,SlopeOne,pearson,51_Female_30s_Married_> 150K.csv,0.410105786,0.038754965,0,0,917,917
+40,SlopeOne,pearson,52_Female_30s_Married with dependents_<50k.csv,0.368050667,0.052705847,0,0,764,764
+41,SlopeOne,pearson,53_Female_30s_Married with dependents_> 50K.csv,0.386881545,0.031917337,0,0,914,914
+42,SlopeOne,pearson,54_Female_30s_Married with dependents_> 150K.csv,0.389016129,0.0455296,0,0,986,986
+43,SlopeOne,pearson,55_Female_40s_Single_<50k.csv,0.328436877,0.044392373,0,0,535,535
+44,SlopeOne,pearson,58_Female_40s_Married_<50k.csv,0.305278154,0.024677652,0,0,519,519
+45,SlopeOne,pearson,5_Male_20s_Married_> 50K.csv,0.372387225,0.042011543,0,0,465,465
+46,SlopeOne,pearson,61_Female_40s_Married with dependents_<50k.csv,0.311763583,0.031583837,0,0,546,546
+47,SlopeOne,pearson,62_Female_40s_Married with dependents_> 50K.csv,0.321725939,0.038578804,0,0,711,711
+48,SlopeOne,pearson,64_Female_50s_Single_<50k.csv,0.251172694,0.035940446,0,0,213,213
+49,SlopeOne,pearson,65_Female_50s_Single_> 50K.csv,0.277605078,0.008512357,0,0,270,270
+50,SlopeOne,pearson,66_Female_50s_Single_> 150K.csv,0.248979656,0.036936694,0,0,307,307
+51,SlopeOne,pearson,67_Female_50s_Married_<50k.csv,0.288935777,0.022083374,0,0,211,211
+52,SlopeOne,pearson,68_Female_50s_Married_> 50K.csv,0.252376373,0.036673212,0,0,269,269
+53,SlopeOne,pearson,69_Female_50s_Married_> 150K.csv,0.252583808,0.036704878,0,0,321,321
+54,SlopeOne,pearson,6_Male_20s_Married_> 150K.csv,0.365498548,0.036797877,0,0,464,464
+55,SlopeOne,pearson,70_Female_50s_Married with dependents_<50k.csv,0.282033757,0.039119642,0,0,200,200
+56,SlopeOne,pearson,71_Female_50s_Married with dependents_> 50K.csv,0.261398891,0.020679906,0,0,260,260
+57,SlopeOne,pearson,72_Female_50s_Married with dependents_> 150K.csv,0.257923866,0.029699211,0,0,328,328
+58,SlopeOne,pearson,7_Male_20s_Married with dependents_<50k.csv,0.320222197,0.032013354,0,0,402,402
+59,SlopeOne,pearson,8_Male_20s_Married with dependents_> 50K.csv,0.380526612,0.028220579,0,0,479,479
+60,SlopeOne,pearson,9_Male_20s_Married with dependents_> 150K.csv,0.381242975,0.050352982,0,0,506,506
+61,KNN_Means,pearson,10_Male_30s_Single_<50k.csv,0.228713834,0.022267207,1,1,625,642
+62,KNN_Means,pearson,11_Male_30s_Single_> 50K.csv,0.185456639,0.038559625,1,1,752,765
+63,KNN_Means,pearson,12_Male_30s_Single_> 150K.csv,0.166696246,0.030756514,1,1,796,810
+64,KNN_Means,pearson,13_Male_30s_Married_<50k.csv,0.219000426,0.023806665,1,1,648,662
+65,KNN_Means,pearson,14_Male_30s_Married_> 50K.csv,0.210699194,0.051300467,1,1,763,776
+66,KNN_Means,pearson,15_Male_30s_Married_> 150K.csv,0.231444945,0.034602044,1,1,836,847
+67,KNN_Means,pearson,16_Male_30s_Married with dependents_<50k.csv,0.201049174,0.016542483,1,1,679,693
+68,KNN_Means,pearson,19_Male_40s_Single_<50k.csv,0.171542732,0.041805911,1,1,490,504
+69,KNN_Means,pearson,1_Male_20s_Single_<50k.csv,0.212583844,0.040307579,1,1,410,420
+70,KNN_Means,pearson,22_Male_40s_Married_<50k.csv,0.15346948,0.041415854,1,1,486,505
+71,KNN_Means,pearson,25_Male_40s_Married with dependents_<50k.csv,0.159953547,0.047367601,1,1,507,526
+72,KNN_Means,pearson,26_Male_40s_Married with dependents_> 50K.csv,0.183926505,0.048765539,1,1,660,673
+73,KNN_Means,pearson,27_Male_40s_Married with dependents_> 150K.csv,0.160494262,0.015842588,1,1,747,757
+74,KNN_Means,pearson,28_Male_50s_Single_<50k.csv,0.202007791,0.055677129,1,1,189,196
+75,KNN_Means,pearson,29_Male_50s_Single_> 50K.csv,0.172003431,0.02225584,1,1,242,249
+76,KNN_Means,pearson,2_Male_20s_Single_> 50K.csv,0.238975528,0.048266693,1,1,422,431
+77,KNN_Means,pearson,30_Male_50s_Single_> 150K.csv,0.189598343,0.018920617,1,1,282,291
+78,KNN_Means,pearson,31_Male_50s_Married_<50k.csv,0.231206285,0.095458534,1,1,201,210
+79,KNN_Means,pearson,32_Male_50s_Married_> 50K.csv,0.19128578,0.063715715,1,1,257,262
+80,KNN_Means,pearson,33_Male_50s_Married_> 150K.csv,0.153632236,0.031636424,1,1,319,324
+81,KNN_Means,pearson,34_Male_50s_Married with dependents_<50k.csv,0.18831056,0.069695966,1,1,186,194
+82,KNN_Means,pearson,35_Male_50s_Married with dependents_> 50K.csv,0.220683382,0.016699675,1,1,242,247
+83,KNN_Means,pearson,36_Male_50s_Married with dependents_> 150K.csv,0.195594237,0.017387208,1,1,313,320
+84,KNN_Means,pearson,37_Female_20s_Single_<50k.csv,0.212426768,0.051506203,1,1,475,486
+85,KNN_Means,pearson,38_Female_20s_Single_> 50K.csv,0.217288124,0.014561676,1,1,468,478
+86,KNN_Means,pearson,39_Female_20s_Single_> 150K.csv,0.190448222,0.014956231,1,1,478,487
+87,KNN_Means,pearson,3_Male_20s_Single_> 150K.csv,0.224276097,0.062830345,1,1,426,433
+88,KNN_Means,pearson,40_Female_20s_Married_<50k.csv,0.166772365,0.003507604,1,1,430,439
+89,KNN_Means,pearson,41_Female_20s_Married_> 50K.csv,0.215026303,0.054895584,1,1,492,499
+90,KNN_Means,pearson,42_Female_20s_Married_> 150K.csv,0.204752005,0.053947306,1,1,493,500
+91,KNN_Means,pearson,43_Female_20s_Married with dependents_<50k.csv,0.190483675,0.026750773,1,1,433,444
+92,KNN_Means,pearson,44_Female_20s_Married with dependents_> 50K.csv,0.181989161,0.040096176,1,1,524,531
+93,KNN_Means,pearson,45_Female_20s_Married with dependents_> 150K.csv,0.196907505,0.015089351,1,1,551,557
+94,KNN_Means,pearson,46_Female_30s_Single_<50k.csv,0.189639891,0.023161996,1,1,708,727
+95,KNN_Means,pearson,47_Female_30s_Single_> 50K.csv,0.208504345,0.039718483,1,1,827,841
+96,KNN_Means,pearson,48_Female_30s_Single_> 150K.csv,0.181649211,0.020859372,1,1,870,882
+97,KNN_Means,pearson,49_Female_30s_Married_<50k.csv,0.205561073,0.023689712,1,1,691,709
+98,KNN_Means,pearson,4_Male_20s_Married_<50k.csv,0.205730658,0.031716727,1,1,377,387
+99,KNN_Means,pearson,50_Female_30s_Married_> 50K.csv,0.182199745,0.034532778,1,1,842,854
+100,KNN_Means,pearson,51_Female_30s_Married_> 150K.csv,0.198312972,0.033334798,1,1,905,917
+101,KNN_Means,pearson,52_Female_30s_Married with dependents_<50k.csv,0.205826044,0.017612072,1,1,751,764
+102,KNN_Means,pearson,53_Female_30s_Married with dependents_> 50K.csv,0.166512423,0.020519695,1,1,905,914
+103,KNN_Means,pearson,54_Female_30s_Married with dependents_> 150K.csv,0.18413495,0.026915193,1,1,973,986
+104,KNN_Means,pearson,55_Female_40s_Single_<50k.csv,0.14133972,0.030742337,1,1,520,535
+105,KNN_Means,pearson,58_Female_40s_Married_<50k.csv,0.144687441,0.030547815,1,1,502,519
+106,KNN_Means,pearson,5_Male_20s_Married_> 50K.csv,0.218972922,0.039225727,1,1,456,465
+107,KNN_Means,pearson,61_Female_40s_Married with dependents_<50k.csv,0.181778258,0.022679501,1,1,531,546
+108,KNN_Means,pearson,62_Female_40s_Married with dependents_> 50K.csv,0.177539466,0.046589767,1,1,699,711
+109,KNN_Means,pearson,64_Female_50s_Single_<50k.csv,0.215585576,0.041059646,1,1,207,213
+110,KNN_Means,pearson,65_Female_50s_Single_> 50K.csv,0.199517308,0.050217752,1,1,264,270
+111,KNN_Means,pearson,66_Female_50s_Single_> 150K.csv,0.161670899,0.068262078,1,1,301,307
+112,KNN_Means,pearson,67_Female_50s_Married_<50k.csv,0.258962852,0.041063142,1,1,204,211
+113,KNN_Means,pearson,68_Female_50s_Married_> 50K.csv,0.182201468,0.023118205,1,1,263,269
+114,KNN_Means,pearson,69_Female_50s_Married_> 150K.csv,0.199210048,0.034297244,1,1,314,321
+115,KNN_Means,pearson,6_Male_20s_Married_> 150K.csv,0.208741747,0.05187397,1,1,457,464
+116,KNN_Means,pearson,70_Female_50s_Married with dependents_<50k.csv,0.252447668,0.087950275,1,1,191,200
+117,KNN_Means,pearson,71_Female_50s_Married with dependents_> 50K.csv,0.182592402,0.028901801,1,1,254,260
+118,KNN_Means,pearson,72_Female_50s_Married with dependents_> 150K.csv,0.174091762,0.042886182,1,1,323,328
+119,KNN_Means,pearson,7_Male_20s_Married with dependents_<50k.csv,0.200554489,0.03738936,1,1,391,402
+120,KNN_Means,pearson,8_Male_20s_Married with dependents_> 50K.csv,0.200381356,0.034261587,1,1,471,479
+121,KNN_Means,pearson,9_Male_20s_Married with dependents_> 150K.csv,0.194795741,0.04356795,1,1,501,506
+122,KNN_Means,pearson,10_Male_30s_Single_<50k.csv,0.208209986,0.02317562,2,2,614,642
+123,KNN_Means,pearson,11_Male_30s_Single_> 50K.csv,0.157684778,0.031645305,2,2,740,765
+124,KNN_Means,pearson,12_Male_30s_Single_> 150K.csv,0.156502015,0.028084757,2,2,783,810
+125,KNN_Means,pearson,13_Male_30s_Married_<50k.csv,0.183212885,0.026982846,2,2,638,662
+126,KNN_Means,pearson,14_Male_30s_Married_> 50K.csv,0.183609745,0.03704705,2,2,751,776
+127,KNN_Means,pearson,15_Male_30s_Married_> 150K.csv,0.186129322,0.037889286,2,2,827,847
+128,KNN_Means,pearson,16_Male_30s_Married with dependents_<50k.csv,0.164616479,0.034654578,2,2,667,693
+129,KNN_Means,pearson,19_Male_40s_Single_<50k.csv,0.148649818,0.040473133,2,2,475,504
+130,KNN_Means,pearson,1_Male_20s_Single_<50k.csv,0.191426615,0.02087744,2,2,396,420
+131,KNN_Means,pearson,22_Male_40s_Married_<50k.csv,0.13587761,0.038319421,2,2,470,505
+132,KNN_Means,pearson,25_Male_40s_Married with dependents_<50k.csv,0.14299846,0.041709635,2,2,491,526
+133,KNN_Means,pearson,26_Male_40s_Married with dependents_> 50K.csv,0.16210517,0.041688998,2,2,649,673
+134,KNN_Means,pearson,27_Male_40s_Married with dependents_> 150K.csv,0.147899221,0.039926234,2,2,733,757
+135,KNN_Means,pearson,28_Male_50s_Single_<50k.csv,0.188746702,0.053876895,2,2,182,196
+136,KNN_Means,pearson,29_Male_50s_Single_> 50K.csv,0.16412067,0.035513593,2,2,235,249
+137,KNN_Means,pearson,2_Male_20s_Single_> 50K.csv,0.206678291,0.038349993,2,2,412,431
+138,KNN_Means,pearson,30_Male_50s_Single_> 150K.csv,0.18605705,0.025119267,2,2,273,291
+139,KNN_Means,pearson,31_Male_50s_Married_<50k.csv,0.204511383,0.085460144,2,2,194,210
+140,KNN_Means,pearson,32_Male_50s_Married_> 50K.csv,0.174143795,0.039656985,2,2,250,262
+141,KNN_Means,pearson,33_Male_50s_Married_> 150K.csv,0.15115255,0.027545646,2,2,311,324
+142,KNN_Means,pearson,34_Male_50s_Married with dependents_<50k.csv,0.178288706,0.061408131,2,2,178,194
+143,KNN_Means,pearson,35_Male_50s_Married with dependents_> 50K.csv,0.173691382,0.033040133,2,2,236,247
+144,KNN_Means,pearson,36_Male_50s_Married with dependents_> 150K.csv,0.158000016,0.040758989,2,2,306,320
+145,KNN_Means,pearson,37_Female_20s_Single_<50k.csv,0.183657256,0.033944638,2,2,461,486
+146,KNN_Means,pearson,38_Female_20s_Single_> 50K.csv,0.179916838,0.016611193,2,2,459,478
+147,KNN_Means,pearson,39_Female_20s_Single_> 150K.csv,0.168001639,0.020584138,2,2,474,487
+148,KNN_Means,pearson,3_Male_20s_Single_> 150K.csv,0.1937614,0.040561509,2,2,415,433
+149,KNN_Means,pearson,40_Female_20s_Married_<50k.csv,0.156191211,0.021415038,2,2,421,439
+150,KNN_Means,pearson,41_Female_20s_Married_> 50K.csv,0.170932177,0.033324597,2,2,484,499
+151,KNN_Means,pearson,42_Female_20s_Married_> 150K.csv,0.172959386,0.019891655,2,2,483,500
+152,KNN_Means,pearson,43_Female_20s_Married with dependents_<50k.csv,0.146540972,0.035527849,2,2,424,444
+153,KNN_Means,pearson,44_Female_20s_Married with dependents_> 50K.csv,0.154786272,0.026703545,2,2,520,531
+154,KNN_Means,pearson,45_Female_20s_Married with dependents_> 150K.csv,0.181561869,0.026978599,2,2,545,557
+155,KNN_Means,pearson,46_Female_30s_Single_<50k.csv,0.177318946,0.01868541,2,2,693,727
+156,KNN_Means,pearson,47_Female_30s_Single_> 50K.csv,0.181001687,0.028300392,2,2,816,841
+157,KNN_Means,pearson,48_Female_30s_Single_> 150K.csv,0.171072144,0.018168309,2,2,860,882
+158,KNN_Means,pearson,49_Female_30s_Married_<50k.csv,0.176502007,0.026986523,2,2,680,709
+159,KNN_Means,pearson,4_Male_20s_Married_<50k.csv,0.181604996,0.010967026,2,2,368,387
+160,KNN_Means,pearson,50_Female_30s_Married_> 50K.csv,0.155675206,0.021114309,2,2,831,854
+161,KNN_Means,pearson,51_Female_30s_Married_> 150K.csv,0.157943229,0.024580417,2,2,896,917
+162,KNN_Means,pearson,52_Female_30s_Married with dependents_<50k.csv,0.169829696,0.02138569,2,2,739,764
+163,KNN_Means,pearson,53_Female_30s_Married with dependents_> 50K.csv,0.149150453,0.022529326,2,2,898,914
+164,KNN_Means,pearson,54_Female_30s_Married with dependents_> 150K.csv,0.163152834,0.030267029,2,2,966,986
+165,KNN_Means,pearson,55_Female_40s_Single_<50k.csv,0.138211988,0.02805543,2,2,510,535
+166,KNN_Means,pearson,58_Female_40s_Married_<50k.csv,0.14432638,0.026103321,2,2,486,519
+167,KNN_Means,pearson,5_Male_20s_Married_> 50K.csv,0.198330078,0.023068613,2,2,446,465
+168,KNN_Means,pearson,61_Female_40s_Married with dependents_<50k.csv,0.174684636,0.030809795,2,2,517,546
+169,KNN_Means,pearson,62_Female_40s_Married with dependents_> 50K.csv,0.149676153,0.032892073,2,2,686,711
+170,KNN_Means,pearson,64_Female_50s_Single_<50k.csv,0.145730125,0.06792449,2,2,198,213
+171,KNN_Means,pearson,65_Female_50s_Single_> 50K.csv,0.200079639,0.02165416,2,2,258,270
+172,KNN_Means,pearson,66_Female_50s_Single_> 150K.csv,0.154488087,0.051062393,2,2,294,307
+173,KNN_Means,pearson,67_Female_50s_Married_<50k.csv,0.246872258,0.04259263,2,2,197,211
+174,KNN_Means,pearson,68_Female_50s_Married_> 50K.csv,0.151588159,0.024607118,2,2,257,269
+175,KNN_Means,pearson,69_Female_50s_Married_> 150K.csv,0.161860789,0.046368775,2,2,306,321
+176,KNN_Means,pearson,6_Male_20s_Married_> 150K.csv,0.190316226,0.027257794,2,2,450,464
+177,KNN_Means,pearson,70_Female_50s_Married with dependents_<50k.csv,0.219089807,0.090243951,2,2,186,200
+178,KNN_Means,pearson,71_Female_50s_Married with dependents_> 50K.csv,0.131122515,0.030541928,2,2,247,260
+179,KNN_Means,pearson,72_Female_50s_Married with dependents_> 150K.csv,0.151387276,0.057605336,2,2,318,328
+180,KNN_Means,pearson,7_Male_20s_Married with dependents_<50k.csv,0.171560057,0.035012453,2,2,379,402
+181,KNN_Means,pearson,8_Male_20s_Married with dependents_> 50K.csv,0.177188887,0.034542612,2,2,465,479
+182,KNN_Means,pearson,9_Male_20s_Married with dependents_> 150K.csv,0.188364361,0.041173067,2,2,496,506
+183,KNN_Means,pearson,10_Male_30s_Single_<50k.csv,0.197386201,0.021314117,3,3,604,642
+184,KNN_Means,pearson,11_Male_30s_Single_> 50K.csv,0.157014601,0.026027671,3,3,734,765
+185,KNN_Means,pearson,12_Male_30s_Single_> 150K.csv,0.150677934,0.026773877,3,3,769,810
+186,KNN_Means,pearson,13_Male_30s_Married_<50k.csv,0.16858389,0.022897733,3,3,629,662
+187,KNN_Means,pearson,14_Male_30s_Married_> 50K.csv,0.181989008,0.029755069,3,3,740,776
+188,KNN_Means,pearson,15_Male_30s_Married_> 150K.csv,0.178286405,0.040358305,3,3,816,847
+189,KNN_Means,pearson,16_Male_30s_Married with dependents_<50k.csv,0.161108091,0.032336695,3,3,660,693
+190,KNN_Means,pearson,19_Male_40s_Single_<50k.csv,0.13186994,0.054076023,3,3,463,504
+191,KNN_Means,pearson,1_Male_20s_Single_<50k.csv,0.189317275,0.020398823,3,3,385,420
+192,KNN_Means,pearson,22_Male_40s_Married_<50k.csv,0.136959662,0.038039811,3,3,457,505
+193,KNN_Means,pearson,25_Male_40s_Married with dependents_<50k.csv,0.140438558,0.039043403,3,3,479,526
+194,KNN_Means,pearson,26_Male_40s_Married with dependents_> 50K.csv,0.160916541,0.030208651,3,3,639,673
+195,KNN_Means,pearson,27_Male_40s_Married with dependents_> 150K.csv,0.145393066,0.035347978,3,3,721,757
+196,KNN_Means,pearson,28_Male_50s_Single_<50k.csv,0.156504432,0.080978112,3,3,169,196
+197,KNN_Means,pearson,29_Male_50s_Single_> 50K.csv,0.156633391,0.023910557,3,3,228,249
+198,KNN_Means,pearson,2_Male_20s_Single_> 50K.csv,0.202419784,0.042220487,3,3,402,431
+199,KNN_Means,pearson,30_Male_50s_Single_> 150K.csv,0.182052524,0.037276046,3,3,264,291
+200,KNN_Means,pearson,31_Male_50s_Married_<50k.csv,0.145925307,0.053669111,3,3,182,210
+201,KNN_Means,pearson,32_Male_50s_Married_> 50K.csv,0.16393111,0.038263967,3,3,243,262
+202,KNN_Means,pearson,33_Male_50s_Married_> 150K.csv,0.14388095,0.016916336,3,3,301,324
+203,KNN_Means,pearson,34_Male_50s_Married with dependents_<50k.csv,0.140016063,0.051130038,3,3,167,194
+204,KNN_Means,pearson,35_Male_50s_Married with dependents_> 50K.csv,0.170772311,0.031734273,3,3,227,247
+205,KNN_Means,pearson,36_Male_50s_Married with dependents_> 150K.csv,0.158278545,0.050647051,3,3,296,320
+206,KNN_Means,pearson,37_Female_20s_Single_<50k.csv,0.189727491,0.030282197,3,3,446,486
+207,KNN_Means,pearson,38_Female_20s_Single_> 50K.csv,0.174897875,0.020652838,3,3,450,478
+208,KNN_Means,pearson,39_Female_20s_Single_> 150K.csv,0.160008513,0.024431801,3,3,465,487
+209,KNN_Means,pearson,3_Male_20s_Single_> 150K.csv,0.196691745,0.032919372,3,3,406,433
+210,KNN_Means,pearson,40_Female_20s_Married_<50k.csv,0.153905713,0.020356575,3,3,409,439
+211,KNN_Means,pearson,41_Female_20s_Married_> 50K.csv,0.171203965,0.033227617,3,3,474,499
+212,KNN_Means,pearson,42_Female_20s_Married_> 150K.csv,0.1674849,0.012552688,3,3,478,500
+213,KNN_Means,pearson,43_Female_20s_Married with dependents_<50k.csv,0.140650309,0.026051094,3,3,412,444
+214,KNN_Means,pearson,44_Female_20s_Married with dependents_> 50K.csv,0.146615463,0.021794834,3,3,512,531
+215,KNN_Means,pearson,45_Female_20s_Married with dependents_> 150K.csv,0.172862254,0.030118321,3,3,541,557
+216,KNN_Means,pearson,46_Female_30s_Single_<50k.csv,0.174783981,0.025895103,3,3,681,727
+217,KNN_Means,pearson,47_Female_30s_Single_> 50K.csv,0.176541173,0.028698418,3,3,809,841
+218,KNN_Means,pearson,48_Female_30s_Single_> 150K.csv,0.165743272,0.020121036,3,3,853,882
+219,KNN_Means,pearson,49_Female_30s_Married_<50k.csv,0.167053697,0.023033988,3,3,672,709
+220,KNN_Means,pearson,4_Male_20s_Married_<50k.csv,0.187976724,0.009901063,3,3,355,387
+221,KNN_Means,pearson,50_Female_30s_Married_> 50K.csv,0.151142564,0.023581986,3,3,822,854
+222,KNN_Means,pearson,51_Female_30s_Married_> 150K.csv,0.153095445,0.020764098,3,3,888,917
+223,KNN_Means,pearson,52_Female_30s_Married with dependents_<50k.csv,0.159028203,0.016144901,3,3,731,764
+224,KNN_Means,pearson,53_Female_30s_Married with dependents_> 50K.csv,0.14618235,0.024919674,3,3,891,914
+225,KNN_Means,pearson,54_Female_30s_Married with dependents_> 150K.csv,0.161562492,0.030012702,3,3,959,986
+226,KNN_Means,pearson,55_Female_40s_Single_<50k.csv,0.144347551,0.028569358,3,3,500,535
+227,KNN_Means,pearson,58_Female_40s_Married_<50k.csv,0.147510302,0.0175407,3,3,474,519
+228,KNN_Means,pearson,5_Male_20s_Married_> 50K.csv,0.202090672,0.032305316,3,3,440,465
+229,KNN_Means,pearson,61_Female_40s_Married with dependents_<50k.csv,0.173433989,0.032335041,3,3,507,546
+230,KNN_Means,pearson,62_Female_40s_Married with dependents_> 50K.csv,0.146036063,0.022014319,3,3,676,711
+231,KNN_Means,pearson,64_Female_50s_Single_<50k.csv,0.142479485,0.076841545,3,3,187,213
+232,KNN_Means,pearson,65_Female_50s_Single_> 50K.csv,0.190505183,0.030069894,3,3,252,270
+233,KNN_Means,pearson,66_Female_50s_Single_> 150K.csv,0.15643496,0.041541528,3,3,287,307
+234,KNN_Means,pearson,67_Female_50s_Married_<50k.csv,0.179487368,0.081878053,3,3,187,211
+235,KNN_Means,pearson,68_Female_50s_Married_> 50K.csv,0.145419777,0.030363771,3,3,251,269
+236,KNN_Means,pearson,69_Female_50s_Married_> 150K.csv,0.14104203,0.03338473,3,3,295,321
+237,KNN_Means,pearson,6_Male_20s_Married_> 150K.csv,0.184620819,0.024170224,3,3,440,464
+238,KNN_Means,pearson,70_Female_50s_Married with dependents_<50k.csv,0.15856572,0.053607756,3,3,173,200
+239,KNN_Means,pearson,71_Female_50s_Married with dependents_> 50K.csv,0.130469867,0.039693605,3,3,239,260
+240,KNN_Means,pearson,72_Female_50s_Married with dependents_> 150K.csv,0.102636548,0.037521385,3,3,309,328
+241,KNN_Means,pearson,7_Male_20s_Married with dependents_<50k.csv,0.172007836,0.033035586,3,3,366,402
+242,KNN_Means,pearson,8_Male_20s_Married with dependents_> 50K.csv,0.174153527,0.029463123,3,3,455,479
+243,KNN_Means,pearson,9_Male_20s_Married with dependents_> 150K.csv,0.183256705,0.039640972,3,3,488,506
+244,KNN_Means,pearson,10_Male_30s_Single_<50k.csv,0.196212994,0.021225578,4,4,596,642
+245,KNN_Means,pearson,11_Male_30s_Single_> 50K.csv,0.155703412,0.038840594,4,4,721,765
+246,KNN_Means,pearson,12_Male_30s_Single_> 150K.csv,0.149994693,0.023760612,4,4,757,810
+247,KNN_Means,pearson,13_Male_30s_Married_<50k.csv,0.159910003,0.027918289,4,4,617,662
+248,KNN_Means,pearson,14_Male_30s_Married_> 50K.csv,0.180550817,0.032171377,4,4,727,776
+249,KNN_Means,pearson,15_Male_30s_Married_> 150K.csv,0.179819655,0.033823915,4,4,807,847
+250,KNN_Means,pearson,16_Male_30s_Married with dependents_<50k.csv,0.164632551,0.035047617,4,4,652,693
+251,KNN_Means,pearson,19_Male_40s_Single_<50k.csv,0.137102246,0.055271026,4,4,451,504
+252,KNN_Means,pearson,1_Male_20s_Single_<50k.csv,0.190092371,0.023724035,4,4,373,420
+253,KNN_Means,pearson,22_Male_40s_Married_<50k.csv,0.13385771,0.041648373,4,4,444,505
+254,KNN_Means,pearson,25_Male_40s_Married with dependents_<50k.csv,0.149166699,0.040362319,4,4,466,526
+255,KNN_Means,pearson,26_Male_40s_Married with dependents_> 50K.csv,0.160687271,0.028502934,4,4,626,673
+256,KNN_Means,pearson,27_Male_40s_Married with dependents_> 150K.csv,0.143489965,0.031652613,4,4,706,757
+257,KNN_Means,pearson,28_Male_50s_Single_<50k.csv,0.134514545,0.055482359,4,4,158,196
+258,KNN_Means,pearson,29_Male_50s_Single_> 50K.csv,0.160649998,0.020848008,4,4,220,249
+259,KNN_Means,pearson,2_Male_20s_Single_> 50K.csv,0.198077743,0.042053024,4,4,393,431
+260,KNN_Means,pearson,30_Male_50s_Single_> 150K.csv,0.187575751,0.035071709,4,4,257,291
+261,KNN_Means,pearson,31_Male_50s_Married_<50k.csv,0.139634412,0.064311806,4,4,169,210
+262,KNN_Means,pearson,32_Male_50s_Married_> 50K.csv,0.165748938,0.047940913,4,4,236,262
+263,KNN_Means,pearson,33_Male_50s_Married_> 150K.csv,0.14402327,0.026297436,4,4,292,324
+264,KNN_Means,pearson,34_Male_50s_Married with dependents_<50k.csv,0.134280531,0.063951078,4,4,156,194
+265,KNN_Means,pearson,35_Male_50s_Married with dependents_> 50K.csv,0.146917963,0.060480435,4,4,213,247
+266,KNN_Means,pearson,36_Male_50s_Married with dependents_> 150K.csv,0.158365445,0.055698979,4,4,283,320
+267,KNN_Means,pearson,37_Female_20s_Single_<50k.csv,0.191760652,0.031855322,4,4,433,486
+268,KNN_Means,pearson,38_Female_20s_Single_> 50K.csv,0.169631227,0.023172382,4,4,441,478
+269,KNN_Means,pearson,39_Female_20s_Single_> 150K.csv,0.158041776,0.024250059,4,4,458,487
+270,KNN_Means,pearson,3_Male_20s_Single_> 150K.csv,0.194891369,0.023983309,4,4,399,433
+271,KNN_Means,pearson,40_Female_20s_Married_<50k.csv,0.15519951,0.025050054,4,4,396,439
+272,KNN_Means,pearson,41_Female_20s_Married_> 50K.csv,0.159280333,0.022738257,4,4,463,499
+273,KNN_Means,pearson,42_Female_20s_Married_> 150K.csv,0.14420503,0.006512539,4,4,467,500
+274,KNN_Means,pearson,43_Female_20s_Married with dependents_<50k.csv,0.139343346,0.028204736,4,4,396,444
+275,KNN_Means,pearson,44_Female_20s_Married with dependents_> 50K.csv,0.147321155,0.016883537,4,4,499,531
+276,KNN_Means,pearson,45_Female_20s_Married with dependents_> 150K.csv,0.158326758,0.023455106,4,4,531,557
+277,KNN_Means,pearson,46_Female_30s_Single_<50k.csv,0.175837153,0.02646259,4,4,672,727
+278,KNN_Means,pearson,47_Female_30s_Single_> 50K.csv,0.175553697,0.025135773,4,4,802,841
+279,KNN_Means,pearson,48_Female_30s_Single_> 150K.csv,0.164531018,0.021365584,4,4,847,882
+280,KNN_Means,pearson,49_Female_30s_Married_<50k.csv,0.165318332,0.017690735,4,4,664,709
+281,KNN_Means,pearson,4_Male_20s_Married_<50k.csv,0.188332045,0.016036416,4,4,342,387
+282,KNN_Means,pearson,50_Female_30s_Married_> 50K.csv,0.151535128,0.028470738,4,4,812,854
+283,KNN_Means,pearson,51_Female_30s_Married_> 150K.csv,0.150495636,0.024649362,4,4,879,917
+284,KNN_Means,pearson,52_Female_30s_Married with dependents_<50k.csv,0.155558256,0.01552656,4,4,722,764
+285,KNN_Means,pearson,53_Female_30s_Married with dependents_> 50K.csv,0.147431021,0.022639831,4,4,884,914
+286,KNN_Means,pearson,54_Female_30s_Married with dependents_> 150K.csv,0.156945443,0.024891567,4,4,953,986
+287,KNN_Means,pearson,55_Female_40s_Single_<50k.csv,0.148415396,0.025936756,4,4,487,535
+288,KNN_Means,pearson,58_Female_40s_Married_<50k.csv,0.153005419,0.014741906,4,4,463,519
+289,KNN_Means,pearson,5_Male_20s_Married_> 50K.csv,0.198946108,0.034783833,4,4,432,465
+290,KNN_Means,pearson,61_Female_40s_Married with dependents_<50k.csv,0.165153002,0.014727009,4,4,494,546
+291,KNN_Means,pearson,62_Female_40s_Married with dependents_> 50K.csv,0.148187592,0.024180665,4,4,666,711
+292,KNN_Means,pearson,64_Female_50s_Single_<50k.csv,0.134267342,0.081501715,4,4,175,213
+293,KNN_Means,pearson,65_Female_50s_Single_> 50K.csv,0.177275828,0.029444627,4,4,242,270
+294,KNN_Means,pearson,66_Female_50s_Single_> 150K.csv,0.156471001,0.036734064,4,4,279,307
+295,KNN_Means,pearson,67_Female_50s_Married_<50k.csv,0.182190216,0.081781629,4,4,174,211
+296,KNN_Means,pearson,68_Female_50s_Married_> 50K.csv,0.136894321,0.027388419,4,4,243,269
+297,KNN_Means,pearson,69_Female_50s_Married_> 150K.csv,0.123940304,0.025205313,4,4,284,321
+298,KNN_Means,pearson,6_Male_20s_Married_> 150K.csv,0.177912216,0.017433851,4,4,433,464
+299,KNN_Means,pearson,70_Female_50s_Married with dependents_<50k.csv,0.156020654,0.05113118,4,4,161,200
+300,KNN_Means,pearson,71_Female_50s_Married with dependents_> 50K.csv,0.136174398,0.04147179,4,4,228,260
+301,KNN_Means,pearson,72_Female_50s_Married with dependents_> 150K.csv,0.109675094,0.039361777,4,4,301,328
+302,KNN_Means,pearson,7_Male_20s_Married with dependents_<50k.csv,0.156666535,0.03769636,4,4,348,402
+303,KNN_Means,pearson,8_Male_20s_Married with dependents_> 50K.csv,0.17533382,0.027804872,4,4,444,479
+304,KNN_Means,pearson,9_Male_20s_Married with dependents_> 150K.csv,0.181764019,0.019323438,4,4,482,506
+305,KNN_Means,pearson,10_Male_30s_Single_<50k.csv,0.196856261,0.02368784,5,5,590,642
+306,KNN_Means,pearson,11_Male_30s_Single_> 50K.csv,0.163894523,0.04041551,5,5,710,765
+307,KNN_Means,pearson,12_Male_30s_Single_> 150K.csv,0.153552536,0.024729737,5,5,747,810
+308,KNN_Means,pearson,13_Male_30s_Married_<50k.csv,0.168701922,0.02586559,5,5,612,662
+309,KNN_Means,pearson,14_Male_30s_Married_> 50K.csv,0.185079654,0.032359278,5,5,715,776
+310,KNN_Means,pearson,15_Male_30s_Married_> 150K.csv,0.182046948,0.036899977,5,5,797,847
+311,KNN_Means,pearson,16_Male_30s_Married with dependents_<50k.csv,0.169524092,0.032895902,5,5,648,693
+312,KNN_Means,pearson,19_Male_40s_Single_<50k.csv,0.147970061,0.048774153,5,5,443,504
+313,KNN_Means,pearson,1_Male_20s_Single_<50k.csv,0.193294836,0.023860771,5,5,359,420
+314,KNN_Means,pearson,22_Male_40s_Married_<50k.csv,0.140578795,0.040387365,5,5,432,505
+315,KNN_Means,pearson,25_Male_40s_Married with dependents_<50k.csv,0.155450255,0.035011206,5,5,452,526
+316,KNN_Means,pearson,26_Male_40s_Married with dependents_> 50K.csv,0.165213636,0.028426326,5,5,616,673
+317,KNN_Means,pearson,27_Male_40s_Married with dependents_> 150K.csv,0.146421649,0.028001,5,5,690,757
+318,KNN_Means,pearson,28_Male_50s_Single_<50k.csv,0.135894768,0.072615277,5,5,149,196
+319,KNN_Means,pearson,29_Male_50s_Single_> 50K.csv,0.16489102,0.019633411,5,5,209,249
+320,KNN_Means,pearson,2_Male_20s_Single_> 50K.csv,0.195431819,0.036603232,5,5,388,431
+321,KNN_Means,pearson,30_Male_50s_Single_> 150K.csv,0.162551969,0.052513752,5,5,245,291
+322,KNN_Means,pearson,31_Male_50s_Married_<50k.csv,0.125032735,0.073608834,5,5,158,210
+323,KNN_Means,pearson,32_Male_50s_Married_> 50K.csv,0.1705501,0.047562683,5,5,228,262
+324,KNN_Means,pearson,33_Male_50s_Married_> 150K.csv,0.149237521,0.033440198,5,5,278,324
+325,KNN_Means,pearson,34_Male_50s_Married with dependents_<50k.csv,0.135112989,0.064603979,5,5,148,194
+326,KNN_Means,pearson,35_Male_50s_Married with dependents_> 50K.csv,0.146890594,0.063614949,5,5,205,247
+327,KNN_Means,pearson,36_Male_50s_Married with dependents_> 150K.csv,0.149517785,0.0350019,5,5,270,320
+328,KNN_Means,pearson,37_Female_20s_Single_<50k.csv,0.193456254,0.034376073,5,5,419,486
+329,KNN_Means,pearson,38_Female_20s_Single_> 50K.csv,0.172165218,0.019663675,5,5,433,478
+330,KNN_Means,pearson,39_Female_20s_Single_> 150K.csv,0.160805904,0.029155516,5,5,447,487
+331,KNN_Means,pearson,3_Male_20s_Single_> 150K.csv,0.192782927,0.031052833,5,5,385,433
+332,KNN_Means,pearson,40_Female_20s_Married_<50k.csv,0.158512569,0.028272353,5,5,387,439
+333,KNN_Means,pearson,41_Female_20s_Married_> 50K.csv,0.155082981,0.021575514,5,5,455,499
+334,KNN_Means,pearson,42_Female_20s_Married_> 150K.csv,0.143520124,0.015507866,5,5,458,500
+335,KNN_Means,pearson,43_Female_20s_Married with dependents_<50k.csv,0.146998998,0.027726471,5,5,384,444
+336,KNN_Means,pearson,44_Female_20s_Married with dependents_> 50K.csv,0.14813596,0.016713928,5,5,488,531
+337,KNN_Means,pearson,45_Female_20s_Married with dependents_> 150K.csv,0.163422241,0.020512137,5,5,524,557
+338,KNN_Means,pearson,46_Female_30s_Single_<50k.csv,0.17494636,0.020994816,5,5,664,727
+339,KNN_Means,pearson,47_Female_30s_Single_> 50K.csv,0.169811315,0.024823659,5,5,795,841
+340,KNN_Means,pearson,48_Female_30s_Single_> 150K.csv,0.16574853,0.020604895,5,5,841,882
+341,KNN_Means,pearson,49_Female_30s_Married_<50k.csv,0.158829506,0.02300957,5,5,654,709
+342,KNN_Means,pearson,4_Male_20s_Married_<50k.csv,0.186586446,0.012799197,5,5,331,387
+343,KNN_Means,pearson,50_Female_30s_Married_> 50K.csv,0.153764681,0.027312159,5,5,805,854
+344,KNN_Means,pearson,51_Female_30s_Married_> 150K.csv,0.155523641,0.024023425,5,5,873,917
+345,KNN_Means,pearson,52_Female_30s_Married with dependents_<50k.csv,0.154192433,0.01408965,5,5,719,764
+346,KNN_Means,pearson,53_Female_30s_Married with dependents_> 50K.csv,0.14754918,0.021853743,5,5,876,914
+347,KNN_Means,pearson,54_Female_30s_Married with dependents_> 150K.csv,0.159099547,0.022805851,5,5,947,986
+348,KNN_Means,pearson,55_Female_40s_Single_<50k.csv,0.153023604,0.02612202,5,5,475,535
+349,KNN_Means,pearson,58_Female_40s_Married_<50k.csv,0.152732833,0.012460386,5,5,452,519
+350,KNN_Means,pearson,5_Male_20s_Married_> 50K.csv,0.193998544,0.034636994,5,5,423,465
+351,KNN_Means,pearson,61_Female_40s_Married with dependents_<50k.csv,0.166326004,0.007685186,5,5,481,546
+352,KNN_Means,pearson,62_Female_40s_Married with dependents_> 50K.csv,0.149625398,0.025488235,5,5,654,711
+353,KNN_Means,pearson,64_Female_50s_Single_<50k.csv,0.142104023,0.077236837,5,5,165,213
+354,KNN_Means,pearson,65_Female_50s_Single_> 50K.csv,0.174568239,0.037742373,5,5,234,270
+355,KNN_Means,pearson,66_Female_50s_Single_> 150K.csv,0.13380119,0.039294814,5,5,268,307
+356,KNN_Means,pearson,67_Female_50s_Married_<50k.csv,0.177018764,0.077147789,5,5,167,211
+357,KNN_Means,pearson,68_Female_50s_Married_> 50K.csv,0.12181149,0.042351343,5,5,235,269
+358,KNN_Means,pearson,69_Female_50s_Married_> 150K.csv,0.113667078,0.044191154,5,5,271,321
+359,KNN_Means,pearson,6_Male_20s_Married_> 150K.csv,0.176110361,0.009828991,5,5,424,464
+360,KNN_Means,pearson,70_Female_50s_Married with dependents_<50k.csv,0.161045871,0.067300611,5,5,152,200
+361,KNN_Means,pearson,71_Female_50s_Married with dependents_> 50K.csv,0.117223703,0.058380939,5,5,219,260
+362,KNN_Means,pearson,72_Female_50s_Married with dependents_> 150K.csv,0.119772252,0.035925557,5,5,291,328
+363,KNN_Means,pearson,7_Male_20s_Married with dependents_<50k.csv,0.152093113,0.036290491,5,5,333,402
+364,KNN_Means,pearson,8_Male_20s_Married with dependents_> 50K.csv,0.170232046,0.025321667,5,5,433,479
+365,KNN_Means,pearson,9_Male_20s_Married with dependents_> 150K.csv,0.184070234,0.019645088,5,5,474,506
+366,KNN_Means,pearson,10_Male_30s_Single_<50k.csv,0.200477288,0.02132745,6,6,582,642
+367,KNN_Means,pearson,11_Male_30s_Single_> 50K.csv,0.16968776,0.04041157,6,6,701,765
+368,KNN_Means,pearson,12_Male_30s_Single_> 150K.csv,0.159484168,0.02209568,6,6,736,810
+369,KNN_Means,pearson,13_Male_30s_Married_<50k.csv,0.170470292,0.025619739,6,6,602,662
+370,KNN_Means,pearson,14_Male_30s_Married_> 50K.csv,0.188085677,0.034670337,6,6,705,776
+371,KNN_Means,pearson,15_Male_30s_Married_> 150K.csv,0.181732927,0.040344069,6,6,783,847
+372,KNN_Means,pearson,16_Male_30s_Married with dependents_<50k.csv,0.16767761,0.033007129,6,6,643,693
+373,KNN_Means,pearson,19_Male_40s_Single_<50k.csv,0.146562614,0.062473265,6,6,426,504
+374,KNN_Means,pearson,1_Male_20s_Single_<50k.csv,0.191015055,0.024398329,6,6,348,420
+375,KNN_Means,pearson,22_Male_40s_Married_<50k.csv,0.151307821,0.040165262,6,6,416,505
+376,KNN_Means,pearson,25_Male_40s_Married with dependents_<50k.csv,0.159390328,0.037354176,6,6,433,526
+377,KNN_Means,pearson,26_Male_40s_Married with dependents_> 50K.csv,0.169708188,0.026009097,6,6,607,673
+378,KNN_Means,pearson,27_Male_40s_Married with dependents_> 150K.csv,0.152656963,0.029309357,6,6,669,757
+379,KNN_Means,pearson,28_Male_50s_Single_<50k.csv,0.149961608,0.078500329,6,6,137,196
+380,KNN_Means,pearson,29_Male_50s_Single_> 50K.csv,0.155340987,0.04274333,6,6,201,249
+381,KNN_Means,pearson,2_Male_20s_Single_> 50K.csv,0.196366341,0.033715474,6,6,381,431
+382,KNN_Means,pearson,30_Male_50s_Single_> 150K.csv,0.165956052,0.050069182,6,6,235,291
+383,KNN_Means,pearson,31_Male_50s_Married_<50k.csv,0.120332089,0.074402876,6,6,144,210
+384,KNN_Means,pearson,32_Male_50s_Married_> 50K.csv,0.17359484,0.045140168,6,6,224,262
+385,KNN_Means,pearson,33_Male_50s_Married_> 150K.csv,0.143431439,0.057425808,6,6,266,324
+386,KNN_Means,pearson,34_Male_50s_Married with dependents_<50k.csv,0.138428613,0.071361635,6,6,132,194
+387,KNN_Means,pearson,35_Male_50s_Married with dependents_> 50K.csv,0.1507889,0.065938468,6,6,191,247
+388,KNN_Means,pearson,36_Male_50s_Married with dependents_> 150K.csv,0.141324662,0.07224545,6,6,248,320
+389,KNN_Means,pearson,37_Female_20s_Single_<50k.csv,0.190738976,0.023577004,6,6,401,486
+390,KNN_Means,pearson,38_Female_20s_Single_> 50K.csv,0.176845289,0.019115628,6,6,427,478
+391,KNN_Means,pearson,39_Female_20s_Single_> 150K.csv,0.158010944,0.037543623,6,6,435,487
+392,KNN_Means,pearson,3_Male_20s_Single_> 150K.csv,0.194723218,0.029916626,6,6,377,433
+393,KNN_Means,pearson,40_Female_20s_Married_<50k.csv,0.16191911,0.02941555,6,6,373,439
+394,KNN_Means,pearson,41_Female_20s_Married_> 50K.csv,0.153331824,0.016243341,6,6,443,499
+395,KNN_Means,pearson,42_Female_20s_Married_> 150K.csv,0.148325607,0.017070079,6,6,444,500
+396,KNN_Means,pearson,43_Female_20s_Married with dependents_<50k.csv,0.152100146,0.029683113,6,6,372,444
+397,KNN_Means,pearson,44_Female_20s_Married with dependents_> 50K.csv,0.149114187,0.013244759,6,6,478,531
+398,KNN_Means,pearson,45_Female_20s_Married with dependents_> 150K.csv,0.162268745,0.019512863,6,6,512,557
+399,KNN_Means,pearson,46_Female_30s_Single_<50k.csv,0.177942044,0.015209761,6,6,657,727
+400,KNN_Means,pearson,47_Female_30s_Single_> 50K.csv,0.171014442,0.021779432,6,6,788,841
+401,KNN_Means,pearson,48_Female_30s_Single_> 150K.csv,0.167416435,0.018985052,6,6,833,882
+402,KNN_Means,pearson,49_Female_30s_Married_<50k.csv,0.157522196,0.02503812,6,6,649,709
+403,KNN_Means,pearson,4_Male_20s_Married_<50k.csv,0.185764663,0.01755876,6,6,317,387
+404,KNN_Means,pearson,50_Female_30s_Married_> 50K.csv,0.160525027,0.026615059,6,6,798,854
+405,KNN_Means,pearson,51_Female_30s_Married_> 150K.csv,0.160487413,0.023152838,6,6,867,917
+406,KNN_Means,pearson,52_Female_30s_Married with dependents_<50k.csv,0.15143482,0.005699275,6,6,714,764
+407,KNN_Means,pearson,53_Female_30s_Married with dependents_> 50K.csv,0.153382283,0.018147612,6,6,868,914
+408,KNN_Means,pearson,54_Female_30s_Married with dependents_> 150K.csv,0.160711374,0.023165501,6,6,941,986
+409,KNN_Means,pearson,55_Female_40s_Single_<50k.csv,0.157216369,0.025188502,6,6,463,535
+410,KNN_Means,pearson,58_Female_40s_Married_<50k.csv,0.156303051,0.012212338,6,6,441,519
+411,KNN_Means,pearson,5_Male_20s_Married_> 50K.csv,0.192986784,0.028984054,6,6,413,465
+412,KNN_Means,pearson,61_Female_40s_Married with dependents_<50k.csv,0.167319266,0.008376374,6,6,468,546
+413,KNN_Means,pearson,62_Female_40s_Married with dependents_> 50K.csv,0.151346645,0.02371216,6,6,643,711
+414,KNN_Means,pearson,64_Female_50s_Single_<50k.csv,0.133028022,0.08098208,6,6,154,213
+415,KNN_Means,pearson,65_Female_50s_Single_> 50K.csv,0.157616738,0.057647496,6,6,226,270
+416,KNN_Means,pearson,66_Female_50s_Single_> 150K.csv,0.133293027,0.040255686,6,6,254,307
+417,KNN_Means,pearson,67_Female_50s_Married_<50k.csv,0.182642358,0.079297299,6,6,156,211
+418,KNN_Means,pearson,68_Female_50s_Married_> 50K.csv,0.126913797,0.042579134,6,6,222,269
+419,KNN_Means,pearson,69_Female_50s_Married_> 150K.csv,0.117599024,0.045577712,6,6,262,321
+420,KNN_Means,pearson,6_Male_20s_Married_> 150K.csv,0.171881494,0.015175941,6,6,414,464
+421,KNN_Means,pearson,70_Female_50s_Married with dependents_<50k.csv,0.170615321,0.077636264,6,6,134,200
+422,KNN_Means,pearson,71_Female_50s_Married with dependents_> 50K.csv,0.123080254,0.061057588,6,6,206,260
+423,KNN_Means,pearson,72_Female_50s_Married with dependents_> 150K.csv,0.116909108,0.053199399,6,6,276,328
+424,KNN_Means,pearson,7_Male_20s_Married with dependents_<50k.csv,0.147997209,0.036503394,6,6,320,402
+425,KNN_Means,pearson,8_Male_20s_Married with dependents_> 50K.csv,0.171907523,0.026242772,6,6,424,479
+426,KNN_Means,pearson,9_Male_20s_Married with dependents_> 150K.csv,0.187346998,0.018352896,6,6,468,506
+427,KNN_Means,pearson,10_Male_30s_Single_<50k.csv,0.201053569,0.025628214,7,7,576,642
+428,KNN_Means,pearson,11_Male_30s_Single_> 50K.csv,0.178233762,0.038619674,7,7,690,765
+429,KNN_Means,pearson,12_Male_30s_Single_> 150K.csv,0.164608463,0.020017453,7,7,728,810
+430,KNN_Means,pearson,13_Male_30s_Married_<50k.csv,0.172188118,0.028792946,7,7,595,662
+431,KNN_Means,pearson,14_Male_30s_Married_> 50K.csv,0.191229545,0.033360002,7,7,697,776
+432,KNN_Means,pearson,15_Male_30s_Married_> 150K.csv,0.1860184,0.038814946,7,7,774,847
+433,KNN_Means,pearson,16_Male_30s_Married with dependents_<50k.csv,0.17463364,0.030723978,7,7,634,693
+434,KNN_Means,pearson,19_Male_40s_Single_<50k.csv,0.15036654,0.063806537,7,7,409,504
+435,KNN_Means,pearson,1_Male_20s_Single_<50k.csv,0.196259681,0.021877103,7,7,336,420
+436,KNN_Means,pearson,22_Male_40s_Married_<50k.csv,0.153985982,0.04332313,7,7,401,505
+437,KNN_Means,pearson,25_Male_40s_Married with dependents_<50k.csv,0.162142563,0.040856078,7,7,420,526
+438,KNN_Means,pearson,26_Male_40s_Married with dependents_> 50K.csv,0.174014899,0.02342443,7,7,591,673
+439,KNN_Means,pearson,27_Male_40s_Married with dependents_> 150K.csv,0.158246151,0.030104846,7,7,651,757
+440,KNN_Means,pearson,28_Male_50s_Single_<50k.csv,0.161122233,0.084144345,7,7,127,196
+441,KNN_Means,pearson,29_Male_50s_Single_> 50K.csv,0.164818759,0.045293765,7,7,188,249
+442,KNN_Means,pearson,2_Male_20s_Single_> 50K.csv,0.19959804,0.031841881,7,7,371,431
+443,KNN_Means,pearson,30_Male_50s_Single_> 150K.csv,0.163511299,0.066460215,7,7,219,291
+444,KNN_Means,pearson,31_Male_50s_Married_<50k.csv,0.128883096,0.075940862,7,7,129,210
+445,KNN_Means,pearson,32_Male_50s_Married_> 50K.csv,0.15856543,0.060624288,7,7,210,262
+446,KNN_Means,pearson,33_Male_50s_Married_> 150K.csv,0.147780475,0.056803904,7,7,256,324
+447,KNN_Means,pearson,34_Male_50s_Married with dependents_<50k.csv,0.137740054,0.065604704,7,7,120,194
+448,KNN_Means,pearson,35_Male_50s_Married with dependents_> 50K.csv,0.160518048,0.067510673,7,7,179,247
+449,KNN_Means,pearson,36_Male_50s_Married with dependents_> 150K.csv,0.140997377,0.077212966,7,7,230,320
+450,KNN_Means,pearson,37_Female_20s_Single_<50k.csv,0.195501908,0.023530104,7,7,388,486
+451,KNN_Means,pearson,38_Female_20s_Single_> 50K.csv,0.174101508,0.011603973,7,7,409,478
+452,KNN_Means,pearson,39_Female_20s_Single_> 150K.csv,0.153947818,0.043616147,7,7,423,487
+453,KNN_Means,pearson,3_Male_20s_Single_> 150K.csv,0.199682843,0.026294564,7,7,365,433
+454,KNN_Means,pearson,40_Female_20s_Married_<50k.csv,0.160340701,0.027229022,7,7,357,439
+455,KNN_Means,pearson,41_Female_20s_Married_> 50K.csv,0.16133905,0.020476243,7,7,425,499
+456,KNN_Means,pearson,42_Female_20s_Married_> 150K.csv,0.147439706,0.029007409,7,7,429,500
+457,KNN_Means,pearson,43_Female_20s_Married with dependents_<50k.csv,0.154398013,0.029460125,7,7,364,444
+458,KNN_Means,pearson,44_Female_20s_Married with dependents_> 50K.csv,0.153528585,0.017480094,7,7,466,531
+459,KNN_Means,pearson,45_Female_20s_Married with dependents_> 150K.csv,0.165751999,0.016612559,7,7,502,557
+460,KNN_Means,pearson,46_Female_30s_Single_<50k.csv,0.179736788,0.015715234,7,7,651,727
+461,KNN_Means,pearson,47_Female_30s_Single_> 50K.csv,0.175585578,0.023864148,7,7,783,841
+462,KNN_Means,pearson,48_Female_30s_Single_> 150K.csv,0.167403051,0.018588711,7,7,825,882
+463,KNN_Means,pearson,49_Female_30s_Married_<50k.csv,0.159161097,0.025715471,7,7,643,709
+464,KNN_Means,pearson,4_Male_20s_Married_<50k.csv,0.190890621,0.015604017,7,7,303,387
+465,KNN_Means,pearson,50_Female_30s_Married_> 50K.csv,0.16381087,0.028106334,7,7,792,854
+466,KNN_Means,pearson,51_Female_30s_Married_> 150K.csv,0.163023167,0.021638115,7,7,861,917
+467,KNN_Means,pearson,52_Female_30s_Married with dependents_<50k.csv,0.153588862,0.007245922,7,7,707,764
+468,KNN_Means,pearson,53_Female_30s_Married with dependents_> 50K.csv,0.158078372,0.018645275,7,7,863,914
+469,KNN_Means,pearson,54_Female_30s_Married with dependents_> 150K.csv,0.164230013,0.021361491,7,7,935,986
+470,KNN_Means,pearson,55_Female_40s_Single_<50k.csv,0.162632857,0.026131837,7,7,446,535
+471,KNN_Means,pearson,58_Female_40s_Married_<50k.csv,0.162275724,0.013438339,7,7,429,519
+472,KNN_Means,pearson,5_Male_20s_Married_> 50K.csv,0.197657099,0.033328951,7,7,398,465
+473,KNN_Means,pearson,61_Female_40s_Married with dependents_<50k.csv,0.170791762,0.009817808,7,7,451,546
+474,KNN_Means,pearson,62_Female_40s_Married with dependents_> 50K.csv,0.150873887,0.021268588,7,7,628,711
+475,KNN_Means,pearson,64_Female_50s_Single_<50k.csv,0.141399454,0.082984362,7,7,141,213
+476,KNN_Means,pearson,65_Female_50s_Single_> 50K.csv,0.1471941,0.069758787,7,7,214,270
+477,KNN_Means,pearson,66_Female_50s_Single_> 150K.csv,0.136472381,0.033683005,7,7,241,307
+478,KNN_Means,pearson,67_Female_50s_Married_<50k.csv,0.187058968,0.075430014,7,7,141,211
+479,KNN_Means,pearson,68_Female_50s_Married_> 50K.csv,0.133207914,0.040169323,7,7,214,269
+480,KNN_Means,pearson,69_Female_50s_Married_> 150K.csv,0.108715093,0.053622169,7,7,245,321
+481,KNN_Means,pearson,6_Male_20s_Married_> 150K.csv,0.174508013,0.016215352,7,7,406,464
+482,KNN_Means,pearson,70_Female_50s_Married with dependents_<50k.csv,0.158206613,0.077927382,7,7,121,200
+483,KNN_Means,pearson,71_Female_50s_Married with dependents_> 50K.csv,0.128348704,0.057952964,7,7,195,260
+484,KNN_Means,pearson,72_Female_50s_Married with dependents_> 150K.csv,0.119788872,0.063999322,7,7,264,328
+485,KNN_Means,pearson,7_Male_20s_Married with dependents_<50k.csv,0.149087129,0.032600108,7,7,303,402
+486,KNN_Means,pearson,8_Male_20s_Married with dependents_> 50K.csv,0.167685057,0.0259721,7,7,411,479
+487,KNN_Means,pearson,9_Male_20s_Married with dependents_> 150K.csv,0.188929011,0.01940252,7,7,457,506
+488,KNN_Means,pearson,10_Male_30s_Single_<50k.csv,0.205054064,0.029379269,8,8,564,642
+489,KNN_Means,pearson,11_Male_30s_Single_> 50K.csv,0.183373229,0.04280427,8,8,676,765
+490,KNN_Means,pearson,12_Male_30s_Single_> 150K.csv,0.170859483,0.017717752,8,8,717,810
+491,KNN_Means,pearson,13_Male_30s_Married_<50k.csv,0.177784302,0.027334745,8,8,584,662
+492,KNN_Means,pearson,14_Male_30s_Married_> 50K.csv,0.196428315,0.033805475,8,8,687,776
+493,KNN_Means,pearson,15_Male_30s_Married_> 150K.csv,0.190395803,0.039360008,8,8,761,847
+494,KNN_Means,pearson,16_Male_30s_Married with dependents_<50k.csv,0.176992708,0.0329343,8,8,627,693
+495,KNN_Means,pearson,19_Male_40s_Single_<50k.csv,0.151552217,0.06730013,8,8,393,504
+496,KNN_Means,pearson,1_Male_20s_Single_<50k.csv,0.19770639,0.023451838,8,8,320,420
+497,KNN_Means,pearson,22_Male_40s_Married_<50k.csv,0.155025511,0.044390761,8,8,386,505
+498,KNN_Means,pearson,25_Male_40s_Married with dependents_<50k.csv,0.167173223,0.042228511,8,8,408,526
+499,KNN_Means,pearson,26_Male_40s_Married with dependents_> 50K.csv,0.174597849,0.021394713,8,8,578,673
+500,KNN_Means,pearson,27_Male_40s_Married with dependents_> 150K.csv,0.160818734,0.027707703,8,8,635,757
+501,KNN_Means,pearson,28_Male_50s_Single_<50k.csv,0.172531546,0.089826337,8,8,116,196
+502,KNN_Means,pearson,29_Male_50s_Single_> 50K.csv,0.158452564,0.060946958,8,8,177,249
+503,KNN_Means,pearson,2_Male_20s_Single_> 50K.csv,0.195833627,0.029660308,8,8,364,431
+504,KNN_Means,pearson,30_Male_50s_Single_> 150K.csv,0.17234499,0.06871828,8,8,206,291
+505,KNN_Means,pearson,31_Male_50s_Married_<50k.csv,0.137102566,0.076991433,8,8,119,210
+506,KNN_Means,pearson,32_Male_50s_Married_> 50K.csv,0.157526748,0.056468351,8,8,199,262
+507,KNN_Means,pearson,33_Male_50s_Married_> 150K.csv,0.143968382,0.067283102,8,8,239,324
+508,KNN_Means,pearson,34_Male_50s_Married with dependents_<50k.csv,0.138781545,0.0631393,8,8,105,194
+509,KNN_Means,pearson,35_Male_50s_Married with dependents_> 50K.csv,0.17615081,0.078258145,8,8,167,247
+510,KNN_Means,pearson,36_Male_50s_Married with dependents_> 150K.csv,0.1508914,0.086904972,8,8,214,320
+511,KNN_Means,pearson,37_Female_20s_Single_<50k.csv,0.19812535,0.017827014,8,8,368,486
+512,KNN_Means,pearson,38_Female_20s_Single_> 50K.csv,0.180741646,0.012381886,8,8,400,478
+513,KNN_Means,pearson,39_Female_20s_Single_> 150K.csv,0.15930592,0.039586014,8,8,410,487
+514,KNN_Means,pearson,3_Male_20s_Single_> 150K.csv,0.200553546,0.028483219,8,8,356,433
+515,KNN_Means,pearson,40_Female_20s_Married_<50k.csv,0.162673715,0.023828377,8,8,344,439
+516,KNN_Means,pearson,41_Female_20s_Married_> 50K.csv,0.163372038,0.022779299,8,8,412,499
+517,KNN_Means,pearson,42_Female_20s_Married_> 150K.csv,0.151071942,0.027194969,8,8,411,500
+518,KNN_Means,pearson,43_Female_20s_Married with dependents_<50k.csv,0.162788532,0.027465844,8,8,345,444
+519,KNN_Means,pearson,44_Female_20s_Married with dependents_> 50K.csv,0.160838153,0.017250663,8,8,456,531
+520,KNN_Means,pearson,45_Female_20s_Married with dependents_> 150K.csv,0.163456836,0.022342084,8,8,489,557
+521,KNN_Means,pearson,46_Female_30s_Single_<50k.csv,0.178930563,0.021455905,8,8,645,727
+522,KNN_Means,pearson,47_Female_30s_Single_> 50K.csv,0.180639119,0.021115282,8,8,772,841
+523,KNN_Means,pearson,48_Female_30s_Single_> 150K.csv,0.171932868,0.017868242,8,8,814,882
+524,KNN_Means,pearson,49_Female_30s_Married_<50k.csv,0.161335648,0.027453358,8,8,636,709
+525,KNN_Means,pearson,4_Male_20s_Married_<50k.csv,0.199265262,0.016088876,8,8,289,387
+526,KNN_Means,pearson,50_Female_30s_Married_> 50K.csv,0.168928844,0.02740994,8,8,787,854
+527,KNN_Means,pearson,51_Female_30s_Married_> 150K.csv,0.16727132,0.021271538,8,8,848,917
+528,KNN_Means,pearson,52_Female_30s_Married with dependents_<50k.csv,0.160323061,0.008874983,8,8,700,764
+529,KNN_Means,pearson,53_Female_30s_Married with dependents_> 50K.csv,0.159915603,0.021697499,8,8,854,914
+530,KNN_Means,pearson,54_Female_30s_Married with dependents_> 150K.csv,0.168619574,0.022110215,8,8,925,986
+531,KNN_Means,pearson,55_Female_40s_Single_<50k.csv,0.16877091,0.02771246,8,8,433,535
+532,KNN_Means,pearson,58_Female_40s_Married_<50k.csv,0.168503308,0.016061431,8,8,419,519
+533,KNN_Means,pearson,5_Male_20s_Married_> 50K.csv,0.195955589,0.033779201,8,8,386,465
+534,KNN_Means,pearson,61_Female_40s_Married with dependents_<50k.csv,0.176139585,0.010208749,8,8,437,546
+535,KNN_Means,pearson,62_Female_40s_Married with dependents_> 50K.csv,0.154340978,0.021780937,8,8,617,711
+536,KNN_Means,pearson,64_Female_50s_Single_<50k.csv,0.154179692,0.087485343,8,8,125,213
+537,KNN_Means,pearson,65_Female_50s_Single_> 50K.csv,0.152535704,0.070661801,8,8,199,270
+538,KNN_Means,pearson,66_Female_50s_Single_> 150K.csv,0.136429658,0.0344107,8,8,224,307
+539,KNN_Means,pearson,67_Female_50s_Married_<50k.csv,0.199912488,0.080790877,8,8,127,211
+540,KNN_Means,pearson,68_Female_50s_Married_> 50K.csv,0.137043698,0.043016711,8,8,201,269
+541,KNN_Means,pearson,69_Female_50s_Married_> 150K.csv,0.112479084,0.054799075,8,8,229,321
+542,KNN_Means,pearson,6_Male_20s_Married_> 150K.csv,0.178609975,0.014011485,8,8,396,464
+543,KNN_Means,pearson,70_Female_50s_Married with dependents_<50k.csv,0.164875506,0.075569005,8,8,112,200
+544,KNN_Means,pearson,71_Female_50s_Married with dependents_> 50K.csv,0.138062659,0.061502949,8,8,187,260
+545,KNN_Means,pearson,72_Female_50s_Married with dependents_> 150K.csv,0.129881572,0.06544291,8,8,248,328
+546,KNN_Means,pearson,7_Male_20s_Married with dependents_<50k.csv,0.153473301,0.0315106,8,8,297,402
+547,KNN_Means,pearson,8_Male_20s_Married with dependents_> 50K.csv,0.169157277,0.026396898,8,8,405,479
+548,KNN_Means,pearson,9_Male_20s_Married with dependents_> 150K.csv,0.192572443,0.024090084,8,8,443,506
+549,SVD,pearson,10_Male_30s_Single_<50k.csv,0.217738602,0.032564522,0,0,642,642
+550,SVD,pearson,11_Male_30s_Single_> 50K.csv,0.222320759,0.014113723,0,0,765,765
+551,SVD,pearson,12_Male_30s_Single_> 150K.csv,0.21131789,0.015849021,0,0,810,810
+552,SVD,pearson,13_Male_30s_Married_<50k.csv,0.213786138,0.012988047,0,0,662,662
+553,SVD,pearson,14_Male_30s_Married_> 50K.csv,0.211864109,0.025396224,0,0,776,776
+554,SVD,pearson,15_Male_30s_Married_> 150K.csv,0.221155759,0.025193799,0,0,847,847
+555,SVD,pearson,16_Male_30s_Married with dependents_<50k.csv,0.218396257,0.014865108,0,0,693,693
+556,SVD,pearson,19_Male_40s_Single_<50k.csv,0.208448798,0.011718754,0,0,504,504
+557,SVD,pearson,1_Male_20s_Single_<50k.csv,0.239274897,0.01361642,0,0,420,420
+558,SVD,pearson,22_Male_40s_Married_<50k.csv,0.205138008,0.018503295,0,0,505,505
+559,SVD,pearson,25_Male_40s_Married with dependents_<50k.csv,0.200878187,0.019544317,0,0,526,526
+560,SVD,pearson,26_Male_40s_Married with dependents_> 50K.csv,0.197380549,0.027186747,0,0,673,673
+561,SVD,pearson,27_Male_40s_Married with dependents_> 150K.csv,0.19577563,0.036494255,0,0,757,757
+562,SVD,pearson,28_Male_50s_Single_<50k.csv,0.231357915,0.044884084,0,0,196,196
+563,SVD,pearson,29_Male_50s_Single_> 50K.csv,0.208735227,0.034670479,0,0,249,249
+564,SVD,pearson,2_Male_20s_Single_> 50K.csv,0.244260435,0.032444608,0,0,431,431
+565,SVD,pearson,30_Male_50s_Single_> 150K.csv,0.196463972,0.033393285,0,0,291,291
+566,SVD,pearson,31_Male_50s_Married_<50k.csv,0.215141639,0.052487737,0,0,210,210
+567,SVD,pearson,32_Male_50s_Married_> 50K.csv,0.19957313,0.038754076,0,0,262,262
+568,SVD,pearson,33_Male_50s_Married_> 150K.csv,0.182953199,0.03602399,0,0,324,324
+569,SVD,pearson,34_Male_50s_Married with dependents_<50k.csv,0.228000222,0.044638879,0,0,194,194
+570,SVD,pearson,35_Male_50s_Married with dependents_> 50K.csv,0.202296059,0.024133419,0,0,247,247
+571,SVD,pearson,36_Male_50s_Married with dependents_> 150K.csv,0.206514605,0.060850249,0,0,320,320
+572,SVD,pearson,37_Female_20s_Single_<50k.csv,0.233018264,0.016409835,0,0,486,486
+573,SVD,pearson,38_Female_20s_Single_> 50K.csv,0.227135582,0.025869395,0,0,478,478
+574,SVD,pearson,39_Female_20s_Single_> 150K.csv,0.228679056,0.022387572,0,0,487,487
+575,SVD,pearson,3_Male_20s_Single_> 150K.csv,0.247951736,0.019747813,0,0,433,433
+576,SVD,pearson,40_Female_20s_Married_<50k.csv,0.229173478,0.025569211,0,0,439,439
+577,SVD,pearson,41_Female_20s_Married_> 50K.csv,0.224460756,0.01640962,0,0,499,499
+578,SVD,pearson,42_Female_20s_Married_> 150K.csv,0.220738841,0.024199114,0,0,500,500
+579,SVD,pearson,43_Female_20s_Married with dependents_<50k.csv,0.240631983,0.029094031,0,0,444,444
+580,SVD,pearson,44_Female_20s_Married with dependents_> 50K.csv,0.225575926,0.020795781,0,0,531,531
+581,SVD,pearson,45_Female_20s_Married with dependents_> 150K.csv,0.206669987,0.006561004,0,0,557,557
+582,SVD,pearson,46_Female_30s_Single_<50k.csv,0.198279598,0.02157119,0,0,727,727
+583,SVD,pearson,47_Female_30s_Single_> 50K.csv,0.226766845,0.019949077,0,0,841,841
+584,SVD,pearson,48_Female_30s_Single_> 150K.csv,0.210517485,0.020937863,0,0,882,882
+585,SVD,pearson,49_Female_30s_Married_<50k.csv,0.197022607,0.010943701,0,0,709,709
+586,SVD,pearson,4_Male_20s_Married_<50k.csv,0.230614263,0.018556066,0,0,387,387
+587,SVD,pearson,50_Female_30s_Married_> 50K.csv,0.207448624,0.014996827,0,0,854,854
+588,SVD,pearson,51_Female_30s_Married_> 150K.csv,0.210316571,0.020192039,0,0,917,917
+589,SVD,pearson,52_Female_30s_Married with dependents_<50k.csv,0.208828497,0.014189033,0,0,764,764
+590,SVD,pearson,53_Female_30s_Married with dependents_> 50K.csv,0.19976618,0.013057847,0,0,914,914
+591,SVD,pearson,54_Female_30s_Married with dependents_> 150K.csv,0.204715833,0.017323681,0,0,986,986
+592,SVD,pearson,55_Female_40s_Single_<50k.csv,0.214094065,0.022950141,0,0,535,535
+593,SVD,pearson,58_Female_40s_Married_<50k.csv,0.208175995,0.01647968,0,0,519,519
+594,SVD,pearson,5_Male_20s_Married_> 50K.csv,0.230956718,0.010330116,0,0,465,465
+595,SVD,pearson,61_Female_40s_Married with dependents_<50k.csv,0.212692391,0.023335547,0,0,546,546
+596,SVD,pearson,62_Female_40s_Married with dependents_> 50K.csv,0.198350455,0.028287894,0,0,711,711
+597,SVD,pearson,64_Female_50s_Single_<50k.csv,0.227053612,0.033604861,0,0,213,213
+598,SVD,pearson,65_Female_50s_Single_> 50K.csv,0.218014019,0.028001402,0,0,270,270
+599,SVD,pearson,66_Female_50s_Single_> 150K.csv,0.176394982,0.035529061,0,0,307,307
+600,SVD,pearson,67_Female_50s_Married_<50k.csv,0.237033797,0.03113497,0,0,211,211
+601,SVD,pearson,68_Female_50s_Married_> 50K.csv,0.206920376,0.017412488,0,0,269,269
+602,SVD,pearson,69_Female_50s_Married_> 150K.csv,0.188288261,0.039876575,0,0,321,321
+603,SVD,pearson,6_Male_20s_Married_> 150K.csv,0.227179104,0.023753437,0,0,464,464
+604,SVD,pearson,70_Female_50s_Married with dependents_<50k.csv,0.24481436,0.043825856,0,0,200,200
+605,SVD,pearson,71_Female_50s_Married with dependents_> 50K.csv,0.203106626,0.033643194,0,0,260,260
+606,SVD,pearson,72_Female_50s_Married with dependents_> 150K.csv,0.189100731,0.046636431,0,0,328,328
+607,SVD,pearson,7_Male_20s_Married with dependents_<50k.csv,0.233838314,0.027203785,0,0,402,402
+608,SVD,pearson,8_Male_20s_Married with dependents_> 50K.csv,0.239110227,0.035543479,0,0,479,479
+609,SVD,pearson,9_Male_20s_Married with dependents_> 150K.csv,0.228903467,0.029846042,0,0,506,506
