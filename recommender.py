@@ -1,6 +1,6 @@
 import pandas as pd
-# import plotly.graph_objs as go
-# import plotly
+import plotly.graph_objs as go
+import plotly
 from surprise import Reader, Dataset, KNNWithMeans, SlopeOne,SVD, \
     NMF, NormalPredictor, BaselineOnly, CoClustering, KNNBaseline, KNNBasic, KNNWithZScore,SVDpp
 import surprise.model_selection as models
@@ -839,18 +839,75 @@ def getTopNFromGUI():
 
     sg.Popup(resultString)
 
+def plotKs(inputFile = 'results/overallResults.csv'):
+
+    df = pd.read_csv(inputFile)
+
+    df = df[df['MIN_K']!=0]
+
+    kList = list(df.MIN_K)
+    rmseList = list(df.RMSE)
+
+    chartMode = 'lines' # or 'markers
+
+    chart = go.Scatter(x = kList, y = rmseList, mode=chartMode)
+
+    fig = go.Figure([chart])
+
+    algo = df.iloc[0]['Algo']
+    sim = df.iloc[0]['Sim_Method'].capitalize() + ' Similarity'
+
+    fig.update_layout(title=algo+ ' using ' + sim+'<br>'+'RMSE vs K')
+
+    plotly.offline.plot(fig, filename='Charts//RMSE_vs_K.html')
+
+def plotBarChart(inputFile = 'results/overallResults.csv'):
+
+    df = pd.read_csv(inputFile)
+
+    pearsonDf = df[df['Sim_Method'] == 'pearson']
+    # cosineDf = df[df['Sim_Method'] == 'cosine']
+
+    totalTestedPoints = pearsonDf.iloc[0]['Total Tested Points']
+
+    rmseList = list(pearsonDf.RMSE)
+    algoList = []
+
+    for i,r in pearsonDf.iterrows():
+        if r['Algo'] == 'KNN_Means':
+            algoList.append(r['Algo'] + '_k' +str(r['MIN_K']))
+        else:
+            algoList.append(r['Algo'])
+
+    maxRMSE = max(rmseList) * 1.1
+    minRMSE = min(rmseList) * 0.9
+
+    dataRMSE = [
+        go.Bar(name='Pearson', x = algoList, y = rmseList),
+        # go.Bar(name='Cosine', x=cosineDf.algo, y=cosineDf.RMSE)
+    ]
+
+
+    layoutRMSE = go.Layout(yaxis = {'range': [minRMSE, maxRMSE]}, title = 'Root Mean Square Error, Num of Folds = %i, Points Tested Per Algo = %i'%(NUM_FOLDS, totalTestedPoints))
+
+    figRMSE = go.Figure(
+        data = dataRMSE,
+              layout=layoutRMSE)
+
+
+    plotly.offline.plot(figRMSE, filename='Charts/RMSE_vs_Algo.html')
+
 
 if __name__ == "__main__":
 
     start = time.time()
 
-
-
-
-    # runGUI()
     # evaluateRMSE()
-    while True:
-        getTopNFromGUI()
+    # while True:
+    #     getTopNFromGUI()
+
+    plotKs()
+    plotBarChart()
 
     print()
     print('Time taken:', time.time()-start, 's')
@@ -883,69 +940,7 @@ if __name__ == "__main__":
 #
 #     plotly.offline.plot(figRMSE, filename='RMSE.html')
 #
-# def evaluateKs(algorithm, sim, file, kRange = [MIN_K,MAX_K],):
-#     algo = algorithm['algo']
-#
-#     algo.sim_options = sim
-#     folderPath = 'tables_72_DE'
-#
-#     kList = []
-#     rmseList = []
-#
-#     for thisK in kRange:
-#         algo.min_k = thisK
-#         algo.k = thisK
-#
-#         testDfList, trainDfList, overallDf, success = processData(folderPath + '//' + eachFile)
-#
-#         if not success:
-#             print('********* NOT ENOUGH DATA *******')
-#             print(eachFile)
-#             print()
-#             continue
-#
-#         n = len(testDfList)
-#
-#         rmseList = []
-#
-#         for i in range(n):
-#             print('Algo:', ALGO_LIST[algoNum]['name'], 'Sim Method:', SIM_LIST[simNum]['name'],
-#                   'File:', eachFile, 'Fold #:', i)
-#             print()
-#
-#             min_k = MIN_K
-#             max_k = MAX_K
-#             rmse = measureAccuracy(testDfList[i], trainDfList[i], overallDf, ALGO_LIST[algoNum]['algo'],
-#                                    SIM_LIST[simNum],
-#                                    min_k=min_k, max_k=max_k)
-#
-#             rmseList.append(rmse)
-#
-#         for i in range(n):
-#             print()
-#             print('Fold Num:', i, 'Algo:', ALGO_LIST[algoNum]['name'], 'RMSE: %.4f' % (rmseList[i]))
-#
-#         overallRMSE = np.mean(rmseList)
-#         rmseStdDev = np.std(rmseList)
-#
-#         print('****************************************')
-#         print('FILE:', eachFile)
-#         print('Algo:', ALGO_LIST[algoNum]['name'], 'Sim:', SIM_LIST[simNum]['name'])
-#         print('k:', thisK)
-#         print('Overall Average RMSE:', overallRMSE)
-#         print('Overall RMSE Std Dev', rmseStdDev)
-#         print('****************************************')
-#
-#         rmseList.append(overallRMSE)
-#         kList.append(thisK)
-#
-#     chart = go.Scatter(x = kList, y = rmseList, mode='markers')
-#
-#     fig = go.Figure([chart])
-#
-#     fig.update_layout(title=algorithm['name'] + ' ' + sim['name'])
-#
-#     plotly.offline.plot(fig, filename='RMSE_vs_K.html')
+
 
 # def makeRecommendation(file, algorithm, sim, min_k, max_k, userInputDict, userID = '9999'):
 #
