@@ -87,6 +87,7 @@ RNG_SEED = 1
 NUM_FOLDS = 5 # must be at least 2
 K_RANGE = range(1,9)
 RATING_SCALE = (0,2)
+TOP_N = 3
 
 def processData(inputFile, folds = NUM_FOLDS):
 
@@ -144,7 +145,7 @@ def processData(inputFile, folds = NUM_FOLDS):
 
     print('Data read complete.')
     print()
-    print('Gender:',gender, '\nAge Group:',age_group, "\nLifestage:",lifestage, '\nIncome:', incomeLvl, '\n')
+    # print('Gender:',gender, '\nAge Group:',age_group, "\nLifestage:",lifestage, '\nIncome:', incomeLvl, '\n')
 
     return testDfList, trainDfList, df, True
 
@@ -417,273 +418,271 @@ def tableSelector(gender, agegroup, lifestage, incomegroup):
 
     filename = ''
 
-    if gender == 0:
-        if agegroup == 0:
-            if lifestage == 0:
-                if incomegroup == 0:
+    if gender == GENDER_GROUP_LIST[0]:
+        if agegroup == AGE_GROUP_LIST[0]:
+            if lifestage == LIFESTAGE_GROUP_LIST[0]:
+                if incomegroup == INCOME_GROUP_LIST[0]:
                     filename = '1_Male_20s_Single_<50k.csv'
 
-                elif incomegroup == 1:
+                elif incomegroup == INCOME_GROUP_LIST[1]:
                     filename = '2_Male_20s_Single_> 50K.csv'
 
-                elif incomegroup == 2:
+                elif incomegroup == INCOME_GROUP_LIST[2]:
                     filename = '3_Male_20s_Single_> 150K.csv'
 
-            elif lifestage == 1:
-                if incomegroup == 0:
+            elif lifestage == LIFESTAGE_GROUP_LIST[1]:
+                if incomegroup == INCOME_GROUP_LIST[0]:
                     filename = '4_Male_20s_Married_<50k.csv'
 
-                elif incomegroup == 1:
+                elif incomegroup == INCOME_GROUP_LIST[1]:
                     filename = '5_Male_20s_Married_> 50K.csv'
 
-                elif incomegroup == 2:
+                elif incomegroup == INCOME_GROUP_LIST[2]:
                     filename = '6_Male_20s_Married_> 150K.csv'
 
-            elif lifestage == 2:
-                if incomegroup == 0:
+            elif lifestage == LIFESTAGE_GROUP_LIST[2]:
+                if incomegroup == INCOME_GROUP_LIST[0]:
                     filename = '7_Male_20s_Married with dependents_<50k.csv'
 
-                elif incomegroup == 1:
+                elif incomegroup == INCOME_GROUP_LIST[1]:
                     filename = '8_Male_20s_Married with dependents_> 50K.csv'
 
-                elif incomegroup == 2:
+                elif incomegroup == INCOME_GROUP_LIST[2]:
                     filename = '9_Male_20s_Married with dependents_> 150K.csv'
 
-        elif agegroup == 1:
-            if lifestage == 0:
-                if incomegroup == 0:
+        elif agegroup == AGE_GROUP_LIST[1]:
+            if lifestage == LIFESTAGE_GROUP_LIST[0]:
+                if incomegroup == INCOME_GROUP_LIST[0]:
                     filename = '10_Male_30s_Single_<50k.csv'
 
-                elif incomegroup == 1:
+                elif incomegroup == INCOME_GROUP_LIST[1]:
                     filename = '11_Male_30s_Single_> 50K.csv'
 
-                elif incomegroup == 2:
+                elif incomegroup == INCOME_GROUP_LIST[2]:
                     filename = '12_Male_30s_Single_> 150K.csv'
 
-            elif lifestage == 1:
-                if incomegroup == 0:
+            elif lifestage == LIFESTAGE_GROUP_LIST[1]:
+                if incomegroup == INCOME_GROUP_LIST[0]:
                     filename = '13_Male_30s_Married_<50k.csv'
 
-                elif incomegroup == 1:
+                elif incomegroup == INCOME_GROUP_LIST[1]:
                     filename = '14_Male_30s_Married_> 50K.csv'
 
-                elif incomegroup == 2:
+                elif incomegroup == INCOME_GROUP_LIST[2]:
                     filename = '15_Male_30s_Married_> 150K.csv'
 
-            elif lifestage == 2:
-                if incomegroup == 0:
+            elif lifestage == LIFESTAGE_GROUP_LIST[2]:
+                if incomegroup == INCOME_GROUP_LIST[0]:
                     filename = '16_Male_30s_Married with dependents_<50k.csv'
 
-                elif incomegroup == 1:
+                elif incomegroup == INCOME_GROUP_LIST[1]:
                     filename = '17_Male_30s_Married with dependents_> 50K.csv'
 
-                elif incomegroup == 2:
+                elif incomegroup == INCOME_GROUP_LIST[2]:
                     filename = '18_Male_30s_Married with dependents_> 150K.csv'
 
-        elif agegroup == 2:
-            if lifestage == 0:
-                if incomegroup == 0:
+        elif agegroup == AGE_GROUP_LIST[2]:
+            if lifestage == LIFESTAGE_GROUP_LIST[0]:
+                if incomegroup == INCOME_GROUP_LIST[0]:
                     filename = '19_Male_40s_Single_<50k.csv'
 
-                elif incomegroup == 1:
+                elif incomegroup == INCOME_GROUP_LIST[1]:
                     filename = '20_Male_40s_Single_> 50K.csv'
 
-                elif incomegroup == 2:
+                elif incomegroup == INCOME_GROUP_LIST[2]:
                     filename = '21_Male_40s_Single_> 150K.csv'
 
-            elif lifestage == 1:
-                if incomegroup == 0:
+            elif lifestage == LIFESTAGE_GROUP_LIST[1]:
+                if incomegroup == INCOME_GROUP_LIST[0]:
                     filename = '22_Male_40s_Married_<50k.csv'
 
-                elif incomegroup == 1:
+                elif incomegroup == INCOME_GROUP_LIST[1]:
                     filename = '23_Male_40s_Married_> 50K.csv'
 
-                elif incomegroup == 2:
+                elif incomegroup == INCOME_GROUP_LIST[2]:
                     filename = '24_Male_40s_Married_> 150K.csv'
 
-            elif lifestage == 2:
-                if incomegroup == 0:
+            elif lifestage == LIFESTAGE_GROUP_LIST[2]:
+                if incomegroup == INCOME_GROUP_LIST[0]:
                     filename = '25_Male_40s_Married with dependents_<50k.csv'
 
-                elif incomegroup == 1:
+                elif incomegroup == INCOME_GROUP_LIST[1]:
                     filename = '26_Male_40s_Married with dependents_> 50K.csv'
 
-                elif incomegroup == 2:
+                elif incomegroup == INCOME_GROUP_LIST[2]:
                     filename = '27_Male_40s_Married with dependents_> 150K.csv'
 
-        elif agegroup == 3:
-            if lifestage == 0:
-                if incomegroup == 0:
+        elif agegroup == AGE_GROUP_LIST[3]:
+            if lifestage == LIFESTAGE_GROUP_LIST[0]:
+                if incomegroup == INCOME_GROUP_LIST[0]:
                     filename = '28_Male_50s_Single_<50k.csv'
 
-                elif incomegroup == 1:
+                elif incomegroup == INCOME_GROUP_LIST[1]:
                     filename = '29_Male_50s_Single_> 50K.csv'
 
-                elif incomegroup == 2:
+                elif incomegroup == INCOME_GROUP_LIST[2]:
                     filename = '30_Male_50s_Single_> 150K.csv'
 
-            elif lifestage == 1:
-                if incomegroup == 0:
+            elif lifestage == LIFESTAGE_GROUP_LIST[1]:
+                if incomegroup == INCOME_GROUP_LIST[0]:
                     filename = '31_Male_50s_Married_<50k.csv'
 
-                elif incomegroup == 1:
+                elif incomegroup == INCOME_GROUP_LIST[1]:
                     filename = '32_Male_50s_Married_> 50K.csv'
 
-                elif incomegroup == 2:
+                elif incomegroup == INCOME_GROUP_LIST[2]:
                     filename = '33_Male_50s_Married_> 150K.csv'
 
-            elif lifestage == 2:
-                if incomegroup == 0:
+            elif lifestage == LIFESTAGE_GROUP_LIST[2]:
+                if incomegroup == INCOME_GROUP_LIST[0]:
                     filename = '34_Male_50s_Married with dependents_<50k.csv'
 
-                elif incomegroup == 1:
+                elif incomegroup == INCOME_GROUP_LIST[1]:
                     filename = '35_Male_50s_Married with dependents_> 50K.csv'
 
-                elif incomegroup == 2:
+                elif incomegroup == INCOME_GROUP_LIST[2]:
                     filename = '36_Male_50s_Married with dependents_> 150K.csv'
 
-    elif gender == 1:
-        if agegroup == 0:
-            if lifestage == 0:
-                if incomegroup == 0:
+    elif gender == GENDER_GROUP_LIST[1]:
+        if agegroup == AGE_GROUP_LIST[0]:
+            if lifestage == LIFESTAGE_GROUP_LIST[0]:
+                if incomegroup == INCOME_GROUP_LIST[0]:
                     filename = '37_Female_20s_Single_<50k.csv'
 
-                elif incomegroup == 1:
+                elif incomegroup == INCOME_GROUP_LIST[1]:
                     filename = '38_Female_20s_Single_> 50K.csv'
 
-                elif incomegroup == 2:
+                elif incomegroup == INCOME_GROUP_LIST[2]:
                     filename = '39_Female_20s_Single_> 150K.csv'
 
-            elif lifestage == 1:
-                if incomegroup == 0:
+            elif lifestage == LIFESTAGE_GROUP_LIST[1]:
+                if incomegroup == INCOME_GROUP_LIST[0]:
                     filename = '40_Female_20s_Married_<50k.csv'
 
-                elif incomegroup == 1:
+                elif incomegroup == INCOME_GROUP_LIST[1]:
                     filename = '41_Female_20s_Married_> 50K.csv'
 
-                elif incomegroup == 2:
+                elif incomegroup == INCOME_GROUP_LIST[2]:
                     filename = '42_Female_20s_Married_> 150K.csv'
 
-            elif lifestage == 2:
-                if incomegroup == 0:
+            elif lifestage == LIFESTAGE_GROUP_LIST[2]:
+                if incomegroup == INCOME_GROUP_LIST[0]:
                     filename = '43_Female_20s_Married with dependents_<50k.csv'
 
-                elif incomegroup == 1:
+                elif incomegroup == INCOME_GROUP_LIST[1]:
                     filename = '44_Female_20s_Married with dependents_> 50K.csv'
 
-                elif incomegroup == 2:
+                elif incomegroup == INCOME_GROUP_LIST[2]:
                     filename = '45_Female_20s_Married with dependents_> 150K.csv'
 
-        elif agegroup == 1:
-            if lifestage == 0:
-                if incomegroup == 0:
+        elif agegroup == AGE_GROUP_LIST[1]:
+            if lifestage == LIFESTAGE_GROUP_LIST[0]:
+                if incomegroup == INCOME_GROUP_LIST[0]:
                     filename = '46_Female_30s_Single_<50k.csv'
 
-                elif incomegroup == 1:
+                elif incomegroup == INCOME_GROUP_LIST[1]:
                     filename = '47_Female_30s_Single_> 50K.csv'
 
-                elif incomegroup == 2:
+                elif incomegroup == INCOME_GROUP_LIST[2]:
                     filename = '48_Female_30s_Single_> 150K.csv'
 
-            elif lifestage == 1:
-                if incomegroup == 0:
+            elif lifestage == LIFESTAGE_GROUP_LIST[1]:
+                if incomegroup == INCOME_GROUP_LIST[0]:
                     filename = '49_Female_30s_Married_<50k.csv'
 
-                elif incomegroup == 1:
+                elif incomegroup == INCOME_GROUP_LIST[1]:
                     filename = '50_Female_30s_Married_> 50K.csv'
 
-                elif incomegroup == 2:
+                elif incomegroup == INCOME_GROUP_LIST[2]:
                     filename = '51_Female_30s_Married_> 150K.csv'
 
-            elif lifestage == 2:
-                if incomegroup == 0:
+            elif lifestage == LIFESTAGE_GROUP_LIST[2]:
+                if incomegroup == INCOME_GROUP_LIST[0]:
                     filename = '52_Female_30s_Married with dependents_<50k.csv'
 
-                elif incomegroup == 1:
+                elif incomegroup == INCOME_GROUP_LIST[1]:
                     filename = '53_Female_30s_Married with dependents_> 50K.csv'
 
-                elif incomegroup == 2:
+                elif incomegroup == INCOME_GROUP_LIST[2]:
                     filename = '54_Female_30s_Married with dependents_> 150K.csv'
 
-        elif agegroup == 2:
-            if lifestage == 0:
-                if incomegroup == 0:
+        elif agegroup == AGE_GROUP_LIST[2]:
+            if lifestage == LIFESTAGE_GROUP_LIST[0]:
+                if incomegroup == INCOME_GROUP_LIST[0]:
                     filename = '55_Female_40s_Single_<50k.csv'
 
-                elif incomegroup == 1:
+                elif incomegroup == INCOME_GROUP_LIST[1]:
                     filename = '56_Female_40s_Single_> 50K.csv'
 
-                elif incomegroup == 2:
+                elif incomegroup == INCOME_GROUP_LIST[2]:
                     filename = '57_Female_40s_Single_> 150K.csv'
 
-            elif lifestage == 1:
-                if incomegroup == 0:
+            elif lifestage == LIFESTAGE_GROUP_LIST[1]:
+                if incomegroup == INCOME_GROUP_LIST[0]:
                     filename = '58_Female_40s_Married_<50k.csv'
 
-                elif incomegroup == 1:
+                elif incomegroup == INCOME_GROUP_LIST[1]:
                     filename = '59_Female_40s_Married_> 50K.csv'
 
-                elif incomegroup == 2:
+                elif incomegroup == INCOME_GROUP_LIST[2]:
                     filename = '60_Female_40s_Married_> 150K.csv'
 
-            elif lifestage == 2:
-                if incomegroup == 0:
+            elif lifestage == LIFESTAGE_GROUP_LIST[2]:
+                if incomegroup == INCOME_GROUP_LIST[0]:
                     filename = '61_Female_40s_Married with dependents_<50k.csv'
 
-                elif incomegroup == 1:
+                elif incomegroup == INCOME_GROUP_LIST[1]:
                     filename = '62_Female_40s_Married with dependents_> 50K.csv'
 
-                elif incomegroup == 2:
+                elif incomegroup == INCOME_GROUP_LIST[2]:
                     filename = '63_Female_40s_Married with dependents_> 150K.csv'
 
-        elif agegroup == 3:
-            if lifestage == 0:
-                if incomegroup == 0:
+        elif agegroup == AGE_GROUP_LIST[3]:
+            if lifestage == LIFESTAGE_GROUP_LIST[0]:
+                if incomegroup == INCOME_GROUP_LIST[0]:
                     filename = '64_Female_50s_Single_<50k.csv'
 
-                elif incomegroup == 1:
+                elif incomegroup == INCOME_GROUP_LIST[1]:
                     filename = '65_Female_50s_Single_> 50K.csv'
 
-                elif incomegroup == 2:
+                elif incomegroup == INCOME_GROUP_LIST[2]:
                     filename = '66_Female_50s_Single_> 150K.csv'
 
-            elif lifestage == 1:
-                if incomegroup == 0:
+            elif lifestage == LIFESTAGE_GROUP_LIST[1]:
+                if incomegroup == INCOME_GROUP_LIST[0]:
                     filename = '67_Female_50s_Married_<50k.csv'
 
-                elif incomegroup == 1:
+                elif incomegroup == INCOME_GROUP_LIST[1]:
                     filename = '68_Female_50s_Married_> 50K.csv'
 
-                elif incomegroup == 2:
+                elif incomegroup == INCOME_GROUP_LIST[2]:
                     filename = '69_Female_50s_Married_> 150K.csv'
 
-            elif lifestage == 2:
-                if incomegroup == 0:
+            elif lifestage == LIFESTAGE_GROUP_LIST[2]:
+                if incomegroup == INCOME_GROUP_LIST[0]:
                     filename = '70_Female_50s_Married with dependents_<50k.csv'
 
-                elif incomegroup == 1:
+                elif incomegroup == INCOME_GROUP_LIST[1]:
                     filename = '71_Female_50s_Married with dependents_> 50K.csv'
 
-                elif incomegroup == 2:
+                elif incomegroup == INCOME_GROUP_LIST[2]:
                     filename = '72_Female_50s_Married with dependents_> 150K.csv'
 
     return filename
 
 
-def generateUserInputs(userInputList):
+def generateUserInputs(userID, productIndex, rating):
 
     entry = {}
-    entry['CLIENTS'] = userInputList[0]
-    # entry['GENDER'] = userInputList[1]
-    # entry['AGE_GROUP'] = userInputList[2]
-    # entry['LIFESTAGE'] = userInputList[3]
-    # entry['INCOME_GROUP'] = userInputList[4]
-    entry['ITEM'] = PRODUCT_LIST[userInputList[5]]
-    entry['RATING'] = userInputList[6]
+    entry['CLIENTS'] = userID
+    entry['ITEM'] = PRODUCT_LIST[productIndex]
+    entry['RATING'] = rating
+
+    print(entry)
 
     return entry
 
-def getTopN(data, processedDf, userID, N = 1, algo = ALGO_LIST[1], sim = SIM_LIST[0]):
+def getTopN(data, processedDf, userID, N = 3, algo = ALGO_LIST[1], sim = SIM_LIST[0]):
     print('Getting Top %i Recommendations.'%(N))
     print('Algorithm:', algo['name'])
     print('Similarity Method:', sim['name'])
@@ -726,9 +725,26 @@ def getTopN(data, processedDf, userID, N = 1, algo = ALGO_LIST[1], sim = SIM_LIS
 
     predict_df = predict_df.sort_values(by=[columns[1], columns[0]], ascending=False,)
 
-    print(predict_df.reset_index(drop=True))
+    allRatings = predict_df.reset_index(drop=True)
 
-    return predict_df[:N].reset_index(drop=True)
+    result = predict_df[:N].reset_index(drop=True)
+
+    print(allRatings)
+
+    allNSameRating = True
+
+    moreOutsideN = allRatings.iloc[N-1].RATING == allRatings.iloc[N].RATING
+
+    lastRating = result.iloc[0].RATING
+
+    for i in range(1, len(result)):
+        thisRating = result.iloc[i].RATING
+
+        if (lastRating != thisRating):
+            allNSameRating = False
+            break
+
+    return result, allNSameRating, moreOutsideN
 
 
 def runGUI():
@@ -740,7 +756,7 @@ def runGUI():
 
     layout = [
         [sg.Text('Please enter the following information:')],
-        [sg.Text('Client ID'), sg.InputText('clientID')],
+        [sg.Text('Client ID'), sg.InputText('')],
         [sg.Text('Gender'), sg.Combo(GENDER_GROUP_LIST, size=(15,1)), sg.Text('Age Group'), sg.Combo(AGE_GROUP_LIST, size=(15,1))],
         [sg.Text('Lifestage'), sg.Combo(LIFESTAGE_GROUP_LIST, size=(15,1)), sg.Text('Income Group'), sg.Combo(INCOME_GROUP_LIST, size=(15,1))],
         ]
@@ -751,50 +767,90 @@ def runGUI():
         [sg.Submit(), sg.Cancel()]
     ]
 
-    window = sg.Window('Recommender Inputs').Layout([[sg.Column(layout, size=(600,800), scrollable=True)]])
+    window = sg.Window('Inputs for Top %i Recommendations'%(TOP_N)).Layout([[sg.Column(layout, size=(600,700), scrollable=True)]])
     button, values = window.Read()
 
     print(button, values)
-if __name__ == "__main__":
 
-    start = time.time()
+    return button, values
 
-    inputs= [
-        [99991, 1, 1, 1, 1, 1, 1],
-        [99991, 1, 1, 1, 1, 3, 2],
-        ]
+def getTopNFromGUI():
+
+    # run this just to get PRODUCT_LIST populated
+    processData('tables_72_DE/50_Female_30s_Married_> 50K.csv')
+
+    button, values = runGUI()
+    
+    if button == 'Submit':
+        userID = values[0]
+        gender = values[1]
+        agegroup = values[2]
+        lifestage = values[3]
+        incomegroup = values[4]
+
+        inputs = values[5:]
+
+    else:
+        print('User Cancelled The Action.')
+        exit()
+
+    filename = tableSelector(gender = gender, agegroup = agegroup,
+                             lifestage = lifestage, incomegroup= incomegroup)
+
+    print('Reading from file:', filename)
 
     folderPath = 'tables_72_DE'
-    filename = tableSelector(gender=inputs[0][1], agegroup=inputs[0][2],
-                             lifestage=inputs[0][3], incomegroup=inputs[0][4])
 
     full_file = folderPath + '//' + filename
 
     df = pd.read_csv(full_file)
     df.drop(labels=['GENDER', 'AGE GROUP', 'LIFESTAGE', 'INCOME GROUP'], inplace=True, axis=1)
-
-    items_list = list(df.columns)
-    items_list = items_list[1:]
-
-    for each in items_list:
-        print(each)
-
     df = processDfInto3Cols(df)
 
-    print(filename)
-
-    # for eachInput in inputs:
-    #     entry = generateUserInputs(eachInput)
-    #     inputDf = pd.DataFrame([entry])
-    #     df = pd.concat([df,inputDf]).reset_index(drop=True)
+    for i in range(len(inputs)):
+        if inputs[i]!='NA':
+            entry = generateUserInputs(userID, productIndex=i, rating = inputs[i])
+            inputDf = pd.DataFrame([entry])
+            df = pd.concat([df,inputDf]).reset_index(drop=True)
 
     data = Dataset.load_from_df(df, reader=Reader())
 
-    getTopN(data, df,userID=3875)
+    result, allNSameRating, moreOutsideN = getTopN(data, df, userID, N=TOP_N)
+
+    print(result)
+    print(allNSameRating)
+    print(moreOutsideN)
+
+    resultString  = 'Here are the top %i recommendations.'%(TOP_N)
+
+    for i in range(len(result)):
+        resultString += '\n'
+        resultString += '%i. '%(i+1)
+        resultString += result.iloc[i].ITEM
+
+    if allNSameRating:
+        resultString += '\n\n'
+        resultString += 'Note: These recommendations have the same predicted ratings.'
+
+    if moreOutsideN:
+        resultString += '\n\n'
+        resultString += 'Note: There are further products with the same predicted ratings outside of these top %i recommendations.'%(TOP_N)
+
+
+    sg.Popup(resultString)
+
+
+if __name__ == "__main__":
+
+    start = time.time()
+
+
 
 
     # runGUI()
     # evaluateRMSE()
+    while True:
+        getTopNFromGUI()
 
     print()
     print('Time taken:', time.time()-start, 's')
