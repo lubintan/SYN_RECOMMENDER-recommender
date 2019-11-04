@@ -12,7 +12,6 @@ import time
 # 5. Lifestage
 # 6. Income Level
 
-
 CLIENT_LABEL = 'CLIENTS'
 AGE_LABEL = 'AGE'
 AGE_GROUP_LABEL = 'AGE GROUP'
@@ -35,7 +34,7 @@ def read(filename):
 
     newDf = df.groupby(by=CLIENT_LABEL).sum()
 
-    newDf = np.clip(newDf,a_max=2,a_min=None)
+    # newDf = np.clip(newDf,a_max=2,a_min=None)
     newDf.index.name = CLIENT_LABEL
 
 
@@ -88,7 +87,7 @@ if __name__ == '__main__':
 
     # Generate 4 groupings
     start = time.time()
-    df = read('Domain Expert Training Data D2.xlsx')
+    df = read('Domain Expert Training Data For Process.xlsx')
     df.to_csv('output_DE.csv', index=False)
 
     end = time.time()

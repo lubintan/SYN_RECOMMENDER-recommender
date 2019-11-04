@@ -15,8 +15,8 @@ import PySimpleGUI as sg
 
 SIM_LIST = [
             {"name": "pearson", "user_based": True, "min_support": 1},
-            # {"name": "msd", "user_based": True, "min_support": 1},
-            # {"name": "cosine", "user_based": True, "min_support": 1}
+            {"name": "msd", "user_based": True, "min_support": 1},
+            {"name": "cosine", "user_based": True, "min_support": 1}
             ]
 
 
@@ -31,60 +31,62 @@ LIFESTAGE_GROUP_LIST = ['Single', 'Married','Married with dependents']
 AGE_GROUP_LIST = ['20s', '30s', '40s', '50s']
 INCOME_GROUP_LIST = ['<50k', '> 50K', '> 150K']
 
-PRODUCT_LIST = [
-        'Retirement - RP with Maturity',
-        'Retirement - RP without Maturity',
-        'Retirement - RP with Life payout',
-        'Retirement - SP',
-        'RP Anticipated Endowment (Regular Pay)',
-        'RP Anticipated Endowment (Very Short PPT)',
-        'RP Anticipated Endowment (Short PPT)',
-        'RP Anticipated Endowment Plans (Mid PPT)',
-        'RP Anticipated Endowment (Long PPT)',
-        'SP Anticipated Endowment',
-        'RP Classic Endowment (Regular Pay)',
-        'RP Classic Endowment (Very Short PPT)',
-        'RP Classic Endowment (Short PPT)',
-        'RP Classic Endowment (Mid PPT)',
-        'RP Classic Endowment (Long PPT)',
-        'SP Classic Endowment',
-        'Education Funding Plans',
-        'RP ILP - Accumulation',
-        'SP ILP - Accumulation',
-        'ILP - Protection (Face Plus)',
-        'ILP - Protection (Level Face)',
-        'Level Term',
-        'Renewable Term',
-        'Reducing Term',
-        'Refundable Term',
-        'Disability Income',
-        'Other Term',
-        'Long Term Care',
-        'Integrated Shield',
-        'International H&S',
-        'Other H&S',
-        'Natal Insurance',
-        'Accident',
-        'Other A&H',
-        'Standalone Critical Illness',
-        'Early Stage Critical Illness',
-        'Cancer',
-        'Gender Specific',
-        'Elderly',
-        'RP WL Protection (with multiplier)',
-        'RP WL Protection (without multiplier)',
-        'SP WL Protection  ',
-        'RP WL Income',
-        'SP WL Income',
-        'Trad UL',
-        'VUL',
-        'Indexed UL',
-    ]
+PRODUCT_LIST = None
+    # [
+    #     'Retirement - RP with Maturity',
+    #     'Retirement - RP without Maturity',
+    #     'Retirement - RP with Life payout',
+    #     'Retirement - SP',
+    #     'RP Anticipated Endowment (Regular Pay)',
+    #     'RP Anticipated Endowment (Very Short PPT)',
+    #     'RP Anticipated Endowment (Short PPT)',
+    #     'RP Anticipated Endowment Plans (Mid PPT)',
+    #     'RP Anticipated Endowment (Long PPT)',
+    #     'SP Anticipated Endowment',
+    #     'RP Classic Endowment (Regular Pay)',
+    #     'RP Classic Endowment (Very Short PPT)',
+    #     'RP Classic Endowment (Short PPT)',
+    #     'RP Classic Endowment (Mid PPT)',
+    #     'RP Classic Endowment (Long PPT)',
+    #     'SP Classic Endowment',
+    #     'Education Funding Plans',
+    #     'RP ILP - Accumulation',
+    #     'SP ILP - Accumulation',
+    #     'ILP - Protection (Face Plus)',
+    #     'ILP - Protection (Level Face)',
+    #     'Level Term',
+    #     'Renewable Term',
+    #     'Reducing Term',
+    #     'Refundable Term',
+    #     'Disability Income',
+    #     'Other Term',
+    #     'Long Term Care',
+    #     'Integrated Shield',
+    #     'International H&S',
+    #     'Other H&S',
+    #     'Natal Insurance',
+    #     'Accident',
+    #     'Other A&H',
+    #     'Standalone Critical Illness',
+    #     'Early Stage Critical Illness',
+    #     'Cancer',
+    #     'Gender Specific',
+    #     'Elderly',
+    #     'RP WL Protection (with multiplier)',
+    #     'RP WL Protection (without multiplier)',
+    #     'SP WL Protection  ',
+    #     'RP WL Income',
+    #     'SP WL Income',
+    #     'Trad UL',
+    #     'VUL',
+    #     'Indexed UL',
+    # ]
 
 INCLUDE_NAS_IN_RMSE = False
 RNG_SEED = 1
 NUM_FOLDS = 5 # must be at least 2
 K_RANGE = range(1,9)
+RATING_SCALE = (0,2)
 
 def processData(inputFile, folds = NUM_FOLDS):
 
@@ -112,6 +114,10 @@ def processData(inputFile, folds = NUM_FOLDS):
     incomeLvl = df.iloc[0]['INCOME GROUP']
 
     df.drop(labels=['GENDER', 'AGE GROUP', 'LIFESTAGE', 'INCOME GROUP'], inplace=True, axis=1)
+
+    # for each in (list(df.columns)):
+    #     print(each)
+    # exit()
 
     length = len(df)
 
@@ -144,6 +150,9 @@ def processData(inputFile, folds = NUM_FOLDS):
 
 def processDfInto3Cols(df):
     products = df.columns[1:]  # remove 'CLIENTS'
+
+    global PRODUCT_LIST
+    PRODUCT_LIST = list(products)
 
     newList = []
 
@@ -396,8 +405,8 @@ def evaluateRMSE():
     print()
     print(tableDf)
 
-    mainDf.to_csv('results//mainResults.csv')
-    tableDf.to_csv('results//tableResults.csv')
+    mainDf.to_csv('results//mainResults_k8.csv')
+    tableDf.to_csv('results//tableResults_k8.csv')
 
 
 def tableSelector(gender, agegroup, lifestage, incomegroup):
@@ -674,11 +683,15 @@ def generateUserInputs(userInputList):
 
     return entry
 
-def getTopN(data, processedDf, userID, N = 1, algo = ALGO_LIST[0], sim = SIM_LIST[0]):
+def getTopN(data, processedDf, userID, N = 1, algo = ALGO_LIST[1], sim = SIM_LIST[0]):
     print('Getting Top %i Recommendations.'%(N))
     print('Algorithm:', algo['name'])
     print('Similarity Method:', sim['name'])
     print('Client ID:', userID)
+
+    print(processedDf)
+    print('processed:',len(processedDf))
+
 
     algorithm = algo['algo']
     algorithm.sim_options = sim
@@ -694,8 +707,8 @@ def getTopN(data, processedDf, userID, N = 1, algo = ALGO_LIST[0], sim = SIM_LIS
 
     print('This user has rated %i items.'%(len(userNonEmpty)))
 
-    for each in userNonEmpty:
-        print(each)
+    # for each in userNonEmpty:
+    #     print(each)
 
     trainingSet = data.build_full_trainset()
     algorithm.fit(trainingSet)
@@ -711,7 +724,7 @@ def getTopN(data, processedDf, userID, N = 1, algo = ALGO_LIST[0], sim = SIM_LIS
 
     predict_df = pd.DataFrame(predict_ratings,columns=columns)
 
-    predict_df = predict_df.sort_values(by=columns[1], ascending=False,)
+    predict_df = predict_df.sort_values(by=[columns[1], columns[0]], ascending=False,)
 
     print(predict_df.reset_index(drop=True))
 
@@ -746,37 +759,41 @@ if __name__ == "__main__":
 
     start = time.time()
 
-    # inputs= [
-    #     [99991, 1, 1, 1, 1, 1, 1],
-    #     [99991, 1, 1, 1, 1, 3, 2],
-    #     ]
-    #
-    # folderPath = 'tables_72_DE'
-    # filename = tableSelector(gender=inputs[0][1], agegroup=inputs[0][2],
-    #                          lifestage=inputs[0][3], incomegroup=inputs[0][4])
-    #
-    # full_file = folderPath + '//' + filename
-    #
-    # df = pd.read_csv(full_file)
-    # df.drop(labels=['GENDER', 'AGE GROUP', 'LIFESTAGE', 'INCOME GROUP'], inplace=True, axis=1)
-    # df = processDfInto3Cols(df)
-    #
-    # data = Dataset.load_from_df(df, reader=Reader())
-    #
-    # print(filename)
-    #
-    # # entries = []
-    # # for eachInput in inputs:
-    # #     entry = generateUserInputs(eachInput)
-    # #     inputDf = pd.DataFrame([entry])
-    # #     df = pd.concat([df,inputDf]).reset_index(drop=True)
-    # #
-    # # print(df)
-    #
-    # getTopN(data, df,userID=3839)
+    inputs= [
+        [99991, 1, 1, 1, 1, 1, 1],
+        [99991, 1, 1, 1, 1, 3, 2],
+        ]
+
+    folderPath = 'tables_72_DE'
+    filename = tableSelector(gender=inputs[0][1], agegroup=inputs[0][2],
+                             lifestage=inputs[0][3], incomegroup=inputs[0][4])
+
+    full_file = folderPath + '//' + filename
+
+    df = pd.read_csv(full_file)
+    df.drop(labels=['GENDER', 'AGE GROUP', 'LIFESTAGE', 'INCOME GROUP'], inplace=True, axis=1)
+
+    items_list = list(df.columns)
+    items_list = items_list[1:]
+
+    for each in items_list:
+        print(each)
+
+    df = processDfInto3Cols(df)
+
+    print(filename)
+
+    # for eachInput in inputs:
+    #     entry = generateUserInputs(eachInput)
+    #     inputDf = pd.DataFrame([entry])
+    #     df = pd.concat([df,inputDf]).reset_index(drop=True)
+
+    data = Dataset.load_from_df(df, reader=Reader())
+
+    getTopN(data, df,userID=3875)
 
 
-    runGUI()
+    # runGUI()
     # evaluateRMSE()
 
     print()
