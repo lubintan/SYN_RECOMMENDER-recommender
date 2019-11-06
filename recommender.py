@@ -87,7 +87,8 @@ RNG_SEED = 1
 NUM_FOLDS = 5 # must be at least 2
 K_RANGE = range(1,9)
 RATING_SCALE = (0,2)
-TOP_N = 3
+TOP_N = 5
+NUM_INPUT_ROWS = 7
 
 def processData(inputFile, folds = NUM_FOLDS):
 
@@ -671,11 +672,11 @@ def tableSelector(gender, agegroup, lifestage, incomegroup):
     return filename
 
 
-def generateUserInputs(userID, productIndex, rating):
+def generateUserInputs(userID, product, rating):
 
     entry = {}
     entry['CLIENTS'] = userID
-    entry['ITEM'] = PRODUCT_LIST[productIndex]
+    entry['ITEM'] = product
     entry['RATING'] = rating
 
     print(entry)
@@ -747,10 +748,14 @@ def getTopN(data, processedDf, userID, N = 3, algo = ALGO_LIST[1], sim = SIM_LIS
 
 def runGUI():
 
-    prodGUI = []
-    for prod in PRODUCT_LIST:
-        prodGUI.append([sg.Text(prod), sg.Combo(['NA',1,2], size=(15,1))])
+    # prodGUI = []
+    # for prod in PRODUCT_LIST:
+    #     prodGUI.append([sg.Text(prod), sg.Combo(['NA',1,2], size=(15,1))])
 
+    prodGUI = []
+
+    for i in range(NUM_INPUT_ROWS):
+        prodGUI.append([sg.Combo(['NA']+PRODUCT_LIST, size=(60, 5)), sg.Combo([1, 2], size=(15, 2))])
 
     layout = [
         [sg.Text('Please enter the following information:')],
@@ -765,7 +770,7 @@ def runGUI():
         [sg.Submit(), sg.Cancel()]
     ]
 
-    window = sg.Window('Inputs for Top %i Recommendations'%(TOP_N)).Layout([[sg.Column(layout, size=(600,700), scrollable=True)]])
+    window = sg.Window('Inputs for Top %i Recommendations'%(TOP_N)).Layout([[sg.Column(layout, size=(600,400), scrollable=False)]])
     button, values = window.Read()
 
     print(button, values)
@@ -786,7 +791,10 @@ def getTopNFromGUI():
             lifestage = values[3]
             incomegroup = values[4]
 
-            inputs = values[5:]
+            selection = values[5:]
+            inputs = []
+            for i in range(NUM_INPUT_ROWS):
+                inputs.append([selection[2*i], selection[(2*i) + 1]])
 
         else:
             print('User Cancelled The Action.')
@@ -805,9 +813,10 @@ def getTopNFromGUI():
         df.drop(labels=['GENDER', 'AGE GROUP', 'LIFESTAGE', 'INCOME GROUP'], inplace=True, axis=1)
         df = processDfInto3Cols(df)
 
-        for i in range(len(inputs)):
-            if inputs[i]!='NA':
-                entry = generateUserInputs(userID, productIndex=i, rating = inputs[i])
+        for eachInput in inputs:
+            print(eachInput)
+            if eachInput[0]!='NA':
+                entry = generateUserInputs(userID, product=eachInput[0], rating = eachInput[1])
                 inputDf = pd.DataFrame([entry])
                 df = pd.concat([df,inputDf]).reset_index(drop=True)
 
